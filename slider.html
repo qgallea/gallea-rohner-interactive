@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Move the slider to discover when globalization flips from curse to cure">
+
+<title>Explore the Effect – Globalization &amp; Conflict</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a94639a2a79a10208c3806ea22bc16b3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d432df4451dac0952efd51de77160ce8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Globalization &amp; Conflict</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./map.html"> 
+<span class="menu-text">The Map</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./mechanism.html"> 
+<span class="menu-text">Mechanism</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./slider.html" aria-current="page"> 
+<span class="menu-text">Explore</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./evidence.html"> 
+<span class="menu-text">Evidence</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./policy.html"> 
+<span class="menu-text">Policy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-tipping-point" id="toc-the-tipping-point" class="nav-link active" data-scroll-target="#the-tipping-point">The Tipping Point</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Explore the Effect</h1>
+</div>
+
+<div>
+  <div class="description">
+    Move the slider to discover when globalization flips from curse to cure
+  </div>
+</div>
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-tipping-point" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-tipping-point">The Tipping Point</h2>
+<p>The core finding of the paper comes down to one equation:</p>
+<p><span class="math display">\[
+\text{Marginal Effect of Proximity} = \underbrace{0.0148}_{\beta_1 &gt; 0} + \underbrace{(-0.0277)}_{\beta_2 &lt; 0} \times \text{Trade Openness}
+\]</span></p>
+<p>When trade openness is <strong>low</strong>, the marginal effect is <strong>positive</strong> — being near a choke point means more conflict. When trade openness is <strong>high</strong> enough, the effect <strong>flips negative</strong> — globalization protects strategic locations.</p>
+<p><strong>Move the slider to find the tipping point.</strong></p>
+<hr>
+<div class="column-page">
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="26" data-source-offset="-25"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 25;"><span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>viewof tradeOpenness <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.35</span><span class="op">,</span> <span class="fl">0.60</span>]<span class="op">,</span> {</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="fl">0.47</span><span class="op">,</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span><span class="op">,</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"World Trade Openness (share of GDP)"</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">// === COEFFICIENTS (from Table 2, Column 1) ===</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>beta1 <span class="op">=</span> <span class="fl">0.0148</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>beta2 <span class="op">=</span> <span class="op">-</span><span class="fl">0.0277</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>se_beta1 <span class="op">=</span> <span class="fl">0.0010</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>se_beta2 <span class="op">=</span> <span class="fl">0.008</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>baselineRisk <span class="op">=</span> <span class="fl">0.015</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>crossover <span class="op">=</span> <span class="op">-</span>beta1 <span class="op">/</span> beta2</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">// === COMPUTED VALUES ===</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>me <span class="op">=</span> beta1 <span class="op">+</span> beta2 <span class="op">*</span> tradeOpenness</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>pctBaseline <span class="op">=</span> (me <span class="op">/</span> baselineRisk <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">// === DYNAMIC INTERPRETATION ===</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;div class="data-callout" style="font-size: 1.05rem; max-width: 700px; margin: 1rem auto;"&gt;</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;strong&gt;Trade Openness&lt;/strong&gt;: </span><span class="sc">${</span>tradeOpenness<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="sc">}</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="vs">  &amp;nbsp;·&amp;nbsp;</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;strong&gt;Marginal Effect&lt;/strong&gt;: &lt;span style="color: </span><span class="sc">${</span>me <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'#e53935'</span> <span class="op">:</span> <span class="st">'#43a047'</span><span class="sc">}</span><span class="vs">; font-weight: 700;"&gt;</span><span class="sc">${</span>me <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'+'</span> <span class="op">:</span> <span class="st">''</span><span class="sc">}${</span>me<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="vs">  Being &lt;strong&gt;1,100 km closer&lt;/strong&gt; to a maritime choke point (Paris → Rome)</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span>me <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">?</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;span style="color: #e53935;"&gt;&lt;strong&gt;increases&lt;/strong&gt;&lt;/span&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span>pctBaseline<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%&lt;/strong&gt; relative to baseline.`</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;span style="color: #43a047;"&gt;&lt;strong&gt;decreases&lt;/strong&gt;&lt;/span&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(pctBaseline)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%&lt;/strong&gt; relative to baseline.`</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="sc">}</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(tradeOpenness <span class="op">-</span> crossover) <span class="op">&lt;</span> <span class="fl">0.005</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="op">?</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;br&gt;&lt;br&gt;&lt;span style="color: #7e57c2; font-weight: 600;"&gt;⚡ You've found the tipping point! At trade ≈ </span><span class="sc">${</span>crossover<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="sc">}</span><span class="vs">, the effect is zero.&lt;/span&gt;`</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> <span class="st">''</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="sc">}</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-10" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="62" data-source-offset="-1533"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">700</span><span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">380</span><span class="op">;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">55</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">70</span>}<span class="op">;</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> tradeRange <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="fl">0.35</span><span class="op">,</span> <span class="fl">0.601</span><span class="op">,</span> <span class="fl">0.001</span>)<span class="op">;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> meData <span class="op">=</span> tradeRange<span class="op">.</span><span class="fu">map</span>(t <span class="kw">=&gt;</span> {</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> meVal <span class="op">=</span> beta1 <span class="op">+</span> beta2 <span class="op">*</span> t<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> seVal <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(se_beta1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> t<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> se_beta2<span class="op">**</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> { <span class="dt">trade</span><span class="op">:</span> t<span class="op">,</span> <span class="dt">me</span><span class="op">:</span> meVal<span class="op">,</span> <span class="dt">se</span><span class="op">:</span> seVal }<span class="op">;</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="fl">0.35</span><span class="op">,</span> <span class="fl">0.60</span>])</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> yExtent <span class="op">=</span> d3<span class="op">.</span><span class="fu">extent</span>(meData<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">me</span>)<span class="op">;</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> yPad <span class="op">=</span> (yExtent[<span class="dv">1</span>] <span class="op">-</span> yExtent[<span class="dv">0</span>]) <span class="op">*</span> <span class="fl">0.3</span><span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> y <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([yExtent[<span class="dv">0</span>] <span class="op">-</span> yPad<span class="op">,</span> yExtent[<span class="dv">1</span>] <span class="op">+</span> yPad])</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"max-width"</span><span class="op">,</span> <span class="st">"100%"</span>)</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"'Source Sans 3', sans-serif"</span>)<span class="op">;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Background zones</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">left</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="fu">x</span>(crossover) <span class="op">-</span> margin<span class="op">.</span><span class="at">left</span>)</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#ffebee"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.4</span>)<span class="op">;</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="fu">x</span>(crossover))<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span> <span class="op">-</span> <span class="fu">x</span>(crossover))</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#e8f5e9"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.4</span>)<span class="op">;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Zone labels</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> (margin<span class="op">.</span><span class="at">left</span> <span class="op">+</span> <span class="fu">x</span>(crossover)) <span class="op">/</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">18</span>)</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#c62828"</span>)</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"11px"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"600"</span>)</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="st">"CONFLICT ZONE"</span>)<span class="op">;</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> (<span class="fu">x</span>(crossover) <span class="op">+</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>) <span class="op">/</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">18</span>)</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#2e7d32"</span>)</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"11px"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"600"</span>)</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="st">"PEACE ZONE"</span>)<span class="op">;</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 99% CI band</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">datum</span>(meData)</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">trade</span>))</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">y0</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">me</span> <span class="op">-</span> <span class="fl">2.576</span> <span class="op">*</span> d<span class="op">.</span><span class="at">se</span>))</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">me</span> <span class="op">+</span> <span class="fl">2.576</span> <span class="op">*</span> d<span class="op">.</span><span class="at">se</span>)))</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#42a5f5"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.12</span>)<span class="op">;</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>  <span class="co">// 90% CI band</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">datum</span>(meData)</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">area</span>()</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">trade</span>))</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">y0</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">me</span> <span class="op">-</span> <span class="fl">1.645</span> <span class="op">*</span> d<span class="op">.</span><span class="at">se</span>))</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">me</span> <span class="op">+</span> <span class="fl">1.645</span> <span class="op">*</span> d<span class="op">.</span><span class="at">se</span>)))</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#42a5f5"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.22</span>)<span class="op">;</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ME line</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">datum</span>(meData)</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x</span>(d<span class="op">.</span><span class="at">trade</span>))<span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y</span>(d<span class="op">.</span><span class="at">me</span>)))</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#1a237e"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">2.5</span>)<span class="op">;</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Zero line</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">left</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>)</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> <span class="fu">y</span>(<span class="dv">0</span>))<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> <span class="fu">y</span>(<span class="dv">0</span>))</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#999"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"4,3"</span>)<span class="op">;</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Crossover line</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> <span class="fu">x</span>(crossover))<span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> <span class="fu">x</span>(crossover))</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#7e57c2"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"6,3"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">1.5</span>)<span class="op">;</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="fu">x</span>(crossover) <span class="op">+</span> <span class="dv">6</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">+</span> <span class="dv">35</span>)</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#7e57c2"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"11px"</span>)</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(<span class="vs">`Tipping point: </span><span class="sc">${</span>crossover<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">3</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Current position dot</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> <span class="fu">x</span>(tradeOpenness))<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> <span class="fu">y</span>(me))</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> <span class="dv">7</span>)</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> me <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">"#e53935"</span> <span class="op">:</span> <span class="st">"#43a047"</span>)</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"white"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">2.5</span>)<span class="op">;</span></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Axes</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">6</span>)<span class="op">.</span><span class="fu">tickFormat</span>(d3<span class="op">.</span><span class="fu">format</span>(<span class="st">".2f"</span>)))</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(g <span class="kw">=&gt;</span> g<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">/</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">42</span>)</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#555"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(<span class="st">"World Trade Openness (share of GDP)"</span>))<span class="op">;</span></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">6</span>)<span class="op">.</span><span class="fu">tickFormat</span>(d3<span class="op">.</span><span class="fu">format</span>(<span class="st">"+.4f"</span>)))</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">call</span>(g <span class="kw">=&gt;</span> g<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="st">"rotate(-90)"</span>)</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span>height <span class="op">/</span> <span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="op">-</span><span class="dv">55</span>)</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#555"</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"13px"</span>)</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(<span class="st">"Marginal Effect of Proximity on Conflict"</span>))<span class="op">;</span></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-11" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How to read this chart
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>blue line</strong> shows how much conflict risk changes when a location moves 1,100 km closer to a maritime choke point (one standard deviation), at different levels of world trade openness. The <strong>shaded bands</strong> show 90% and 99% confidence intervals. The <strong>purple dashed line</strong> marks the tipping point where the effect crosses zero.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG4vLyA9PT0gVEhFIFNMSURFUiA9PT1cclxudmlld29mIHRyYWRlT3Blbm5lc3MgPSBJbnB1dHMucmFuZ2UoWzAuMzUsIDAuNjBdLCB7XHJcbiAgdmFsdWU6IDAuNDcsXHJcbiAgc3RlcDogMC4wMDEsXHJcbiAgbGFiZWw6IFwiV29ybGQgVHJhZGUgT3Blbm5lc3MgKHNoYXJlIG9mIEdEUClcIlxyXG59KVxyXG5cclxuLy8gPT09IENPRUZGSUNJRU5UUyAoZnJvbSBUYWJsZSAyLCBDb2x1bW4gMSkgPT09XHJcbmJldGExID0gMC4wMTQ4XHJcbmJldGEyID0gLTAuMDI3N1xyXG5zZV9iZXRhMSA9IDAuMDAxMFxyXG5zZV9iZXRhMiA9IDAuMDA4XHJcbmJhc2VsaW5lUmlzayA9IDAuMDE1XHJcbmNyb3Nzb3ZlciA9IC1iZXRhMSAvIGJldGEyXHJcblxyXG4vLyA9PT0gQ09NUFVURUQgVkFMVUVTID09PVxyXG5tZSA9IGJldGExICsgYmV0YTIgKiB0cmFkZU9wZW5uZXNzXHJcbnBjdEJhc2VsaW5lID0gKG1lIC8gYmFzZWxpbmVSaXNrICogMTAwKVxyXG5cclxuLy8gPT09IERZTkFNSUMgSU5URVJQUkVUQVRJT04gPT09XHJcbmh0bC5odG1sYDxkaXYgY2xhc3M9XCJkYXRhLWNhbGxvdXRcIiBzdHlsZT1cImZvbnQtc2l6ZTogMS4wNXJlbTsgbWF4LXdpZHRoOiA3MDBweDsgbWFyZ2luOiAxcmVtIGF1dG87XCI+XHJcbiAgPHN0cm9uZz5UcmFkZSBPcGVubmVzczwvc3Ryb25nPjogJHt0cmFkZU9wZW5uZXNzLnRvRml4ZWQoMyl9XHJcbiAgJm5ic3A7wrcmbmJzcDtcclxuICA8c3Ryb25nPk1hcmdpbmFsIEVmZmVjdDwvc3Ryb25nPjogPHNwYW4gc3R5bGU9XCJjb2xvcjogJHttZSA+IDAgPyAnI2U1MzkzNScgOiAnIzQzYTA0Nyd9OyBmb250LXdlaWdodDogNzAwO1wiPiR7bWUgPiAwID8gJysnIDogJyd9JHttZS50b0ZpeGVkKDQpfTwvc3Bhbj5cclxuICA8YnI+PGJyPlxyXG4gIEJlaW5nIDxzdHJvbmc+MSwxMDAga20gY2xvc2VyPC9zdHJvbmc+IHRvIGEgbWFyaXRpbWUgY2hva2UgcG9pbnQgKFBhcmlzIOKGkiBSb21lKVxyXG4gICR7bWUgPiAwXHJcbiAgICA/IGh0bC5odG1sYDxzcGFuIHN0eWxlPVwiY29sb3I6ICNlNTM5MzU7XCI+PHN0cm9uZz5pbmNyZWFzZXM8L3N0cm9uZz48L3NwYW4+IGNvbmZsaWN0IHJpc2sgYnkgPHN0cm9uZz4ke3BjdEJhc2VsaW5lLnRvRml4ZWQoMSl9JTwvc3Ryb25nPiByZWxhdGl2ZSB0byBiYXNlbGluZS5gXHJcbiAgICA6IGh0bC5odG1sYDxzcGFuIHN0eWxlPVwiY29sb3I6ICM0M2EwNDc7XCI+PHN0cm9uZz5kZWNyZWFzZXM8L3N0cm9uZz48L3NwYW4+IGNvbmZsaWN0IHJpc2sgYnkgPHN0cm9uZz4ke01hdGguYWJzKHBjdEJhc2VsaW5lKS50b0ZpeGVkKDEpfSU8L3N0cm9uZz4gcmVsYXRpdmUgdG8gYmFzZWxpbmUuYFxyXG4gIH1cclxuICAke01hdGguYWJzKHRyYWRlT3Blbm5lc3MgLSBjcm9zc292ZXIpIDwgMC4wMDVcclxuICAgID8gaHRsLmh0bWxgPGJyPjxicj48c3BhbiBzdHlsZT1cImNvbG9yOiAjN2U1N2MyOyBmb250LXdlaWdodDogNjAwO1wiPuKaoSBZb3UndmUgZm91bmQgdGhlIHRpcHBpbmcgcG9pbnQhIEF0IHRyYWRlIOKJiCAke2Nyb3Nzb3Zlci50b0ZpeGVkKDMpfSwgdGhlIGVmZmVjdCBpcyB6ZXJvLjwvc3Bhbj5gXHJcbiAgICA6ICcnXHJcbiAgfVxyXG48L2Rpdj5gXHJcblxyXG4vLyA9PT0gVEhFIENIQVJUID09PVxyXG57XHJcbiAgY29uc3Qgd2lkdGggPSA3MDA7XHJcbiAgY29uc3QgaGVpZ2h0ID0gMzgwO1xyXG4gIGNvbnN0IG1hcmdpbiA9IHt0b3A6IDMwLCByaWdodDogNTAsIGJvdHRvbTogNTUsIGxlZnQ6IDcwfTtcclxuXHJcbiAgY29uc3QgdHJhZGVSYW5nZSA9IGQzLnJhbmdlKDAuMzUsIDAuNjAxLCAwLjAwMSk7XHJcbiAgY29uc3QgbWVEYXRhID0gdHJhZGVSYW5nZS5tYXAodCA9PiB7XHJcbiAgICBjb25zdCBtZVZhbCA9IGJldGExICsgYmV0YTIgKiB0O1xyXG4gICAgY29uc3Qgc2VWYWwgPSBNYXRoLnNxcnQoc2VfYmV0YTEqKjIgKyB0KioyICogc2VfYmV0YTIqKjIpO1xyXG4gICAgcmV0dXJuIHsgdHJhZGU6IHQsIG1lOiBtZVZhbCwgc2U6IHNlVmFsIH07XHJcbiAgfSk7XHJcblxyXG4gIGNvbnN0IHggPSBkMy5zY2FsZUxpbmVhcigpXHJcbiAgICAuZG9tYWluKFswLjM1LCAwLjYwXSlcclxuICAgIC5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XHJcblxyXG4gIGNvbnN0IHlFeHRlbnQgPSBkMy5leHRlbnQobWVEYXRhLCBkID0+IGQubWUpO1xyXG4gIGNvbnN0IHlQYWQgPSAoeUV4dGVudFsxXSAtIHlFeHRlbnRbMF0pICogMC4zO1xyXG4gIGNvbnN0IHkgPSBkMy5zY2FsZUxpbmVhcigpXHJcbiAgICAuZG9tYWluKFt5RXh0ZW50WzBdIC0geVBhZCwgeUV4dGVudFsxXSArIHlQYWRdKVxyXG4gICAgLnJhbmdlKFtoZWlnaHQgLSBtYXJnaW4uYm90dG9tLCBtYXJnaW4udG9wXSk7XHJcblxyXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxyXG4gICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFswLCAwLCB3aWR0aCwgaGVpZ2h0XSlcclxuICAgIC5hdHRyKFwid2lkdGhcIiwgd2lkdGgpXHJcbiAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQpXHJcbiAgICAuc3R5bGUoXCJtYXgtd2lkdGhcIiwgXCIxMDAlXCIpXHJcbiAgICAuc3R5bGUoXCJmb250LWZhbWlseVwiLCBcIidTb3VyY2UgU2FucyAzJywgc2Fucy1zZXJpZlwiKTtcclxuXHJcbiAgLy8gQmFja2dyb3VuZCB6b25lc1xyXG4gIHN2Zy5hcHBlbmQoXCJyZWN0XCIpXHJcbiAgICAuYXR0cihcInhcIiwgbWFyZ2luLmxlZnQpLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3ApXHJcbiAgICAuYXR0cihcIndpZHRoXCIsIHgoY3Jvc3NvdmVyKSAtIG1hcmdpbi5sZWZ0KVxyXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0IC0gbWFyZ2luLnRvcCAtIG1hcmdpbi5ib3R0b20pXHJcbiAgICAuYXR0cihcImZpbGxcIiwgXCIjZmZlYmVlXCIpLmF0dHIoXCJvcGFjaXR5XCIsIDAuNCk7XHJcblxyXG4gIHN2Zy5hcHBlbmQoXCJyZWN0XCIpXHJcbiAgICAuYXR0cihcInhcIiwgeChjcm9zc292ZXIpKS5hdHRyKFwieVwiLCBtYXJnaW4udG9wKVxyXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aCAtIG1hcmdpbi5yaWdodCAtIHgoY3Jvc3NvdmVyKSlcclxuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCAtIG1hcmdpbi50b3AgLSBtYXJnaW4uYm90dG9tKVxyXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwiI2U4ZjVlOVwiKS5hdHRyKFwib3BhY2l0eVwiLCAwLjQpO1xyXG5cclxuICAvLyBab25lIGxhYmVsc1xyXG4gIHN2Zy5hcHBlbmQoXCJ0ZXh0XCIpXHJcbiAgICAuYXR0cihcInhcIiwgKG1hcmdpbi5sZWZ0ICsgeChjcm9zc292ZXIpKSAvIDIpLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3AgKyAxOClcclxuICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIikuYXR0cihcImZpbGxcIiwgXCIjYzYyODI4XCIpXHJcbiAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCBcIjExcHhcIikuYXR0cihcImZvbnQtd2VpZ2h0XCIsIFwiNjAwXCIpXHJcbiAgICAudGV4dChcIkNPTkZMSUNUIFpPTkVcIik7XHJcblxyXG4gIHN2Zy5hcHBlbmQoXCJ0ZXh0XCIpXHJcbiAgICAuYXR0cihcInhcIiwgKHgoY3Jvc3NvdmVyKSArIHdpZHRoIC0gbWFyZ2luLnJpZ2h0KSAvIDIpLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3AgKyAxOClcclxuICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIikuYXR0cihcImZpbGxcIiwgXCIjMmU3ZDMyXCIpXHJcbiAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCBcIjExcHhcIikuYXR0cihcImZvbnQtd2VpZ2h0XCIsIFwiNjAwXCIpXHJcbiAgICAudGV4dChcIlBFQUNFIFpPTkVcIik7XHJcblxyXG4gIC8vIDk5JSBDSSBiYW5kXHJcbiAgc3ZnLmFwcGVuZChcInBhdGhcIilcclxuICAgIC5kYXR1bShtZURhdGEpXHJcbiAgICAuYXR0cihcImRcIiwgZDMuYXJlYSgpXHJcbiAgICAgIC54KGQgPT4geChkLnRyYWRlKSlcclxuICAgICAgLnkwKGQgPT4geShkLm1lIC0gMi41NzYgKiBkLnNlKSlcclxuICAgICAgLnkxKGQgPT4geShkLm1lICsgMi41NzYgKiBkLnNlKSkpXHJcbiAgICAuYXR0cihcImZpbGxcIiwgXCIjNDJhNWY1XCIpLmF0dHIoXCJvcGFjaXR5XCIsIDAuMTIpO1xyXG5cclxuICAvLyA5MCUgQ0kgYmFuZFxyXG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpXHJcbiAgICAuZGF0dW0obWVEYXRhKVxyXG4gICAgLmF0dHIoXCJkXCIsIGQzLmFyZWEoKVxyXG4gICAgICAueChkID0+IHgoZC50cmFkZSkpXHJcbiAgICAgIC55MChkID0+IHkoZC5tZSAtIDEuNjQ1ICogZC5zZSkpXHJcbiAgICAgIC55MShkID0+IHkoZC5tZSArIDEuNjQ1ICogZC5zZSkpKVxyXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwiIzQyYTVmNVwiKS5hdHRyKFwib3BhY2l0eVwiLCAwLjIyKTtcclxuXHJcbiAgLy8gTUUgbGluZVxyXG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpXHJcbiAgICAuZGF0dW0obWVEYXRhKVxyXG4gICAgLmF0dHIoXCJkXCIsIGQzLmxpbmUoKS54KGQgPT4geChkLnRyYWRlKSkueShkID0+IHkoZC5tZSkpKVxyXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwibm9uZVwiKS5hdHRyKFwic3Ryb2tlXCIsIFwiIzFhMjM3ZVwiKS5hdHRyKFwic3Ryb2tlLXdpZHRoXCIsIDIuNSk7XHJcblxyXG4gIC8vIFplcm8gbGluZVxyXG4gIHN2Zy5hcHBlbmQoXCJsaW5lXCIpXHJcbiAgICAuYXR0cihcIngxXCIsIG1hcmdpbi5sZWZ0KS5hdHRyKFwieDJcIiwgd2lkdGggLSBtYXJnaW4ucmlnaHQpXHJcbiAgICAuYXR0cihcInkxXCIsIHkoMCkpLmF0dHIoXCJ5MlwiLCB5KDApKVxyXG4gICAgLmF0dHIoXCJzdHJva2VcIiwgXCIjOTk5XCIpLmF0dHIoXCJzdHJva2UtZGFzaGFycmF5XCIsIFwiNCwzXCIpO1xyXG5cclxuICAvLyBDcm9zc292ZXIgbGluZVxyXG4gIHN2Zy5hcHBlbmQoXCJsaW5lXCIpXHJcbiAgICAuYXR0cihcIngxXCIsIHgoY3Jvc3NvdmVyKSkuYXR0cihcIngyXCIsIHgoY3Jvc3NvdmVyKSlcclxuICAgIC5hdHRyKFwieTFcIiwgbWFyZ2luLnRvcCkuYXR0cihcInkyXCIsIGhlaWdodCAtIG1hcmdpbi5ib3R0b20pXHJcbiAgICAuYXR0cihcInN0cm9rZVwiLCBcIiM3ZTU3YzJcIikuYXR0cihcInN0cm9rZS1kYXNoYXJyYXlcIiwgXCI2LDNcIikuYXR0cihcInN0cm9rZS13aWR0aFwiLCAxLjUpO1xyXG5cclxuICBzdmcuYXBwZW5kKFwidGV4dFwiKVxyXG4gICAgLmF0dHIoXCJ4XCIsIHgoY3Jvc3NvdmVyKSArIDYpLmF0dHIoXCJ5XCIsIG1hcmdpbi50b3AgKyAzNSlcclxuICAgIC5hdHRyKFwiZmlsbFwiLCBcIiM3ZTU3YzJcIikuYXR0cihcImZvbnQtc2l6ZVwiLCBcIjExcHhcIilcclxuICAgIC50ZXh0KGBUaXBwaW5nIHBvaW50OiAke2Nyb3Nzb3Zlci50b0ZpeGVkKDMpfWApO1xyXG5cclxuICAvLyBDdXJyZW50IHBvc2l0aW9uIGRvdFxyXG4gIHN2Zy5hcHBlbmQoXCJjaXJjbGVcIilcclxuICAgIC5hdHRyKFwiY3hcIiwgeCh0cmFkZU9wZW5uZXNzKSkuYXR0cihcImN5XCIsIHkobWUpKVxyXG4gICAgLmF0dHIoXCJyXCIsIDcpXHJcbiAgICAuYXR0cihcImZpbGxcIiwgbWUgPiAwID8gXCIjZTUzOTM1XCIgOiBcIiM0M2EwNDdcIilcclxuICAgIC5hdHRyKFwic3Ryb2tlXCIsIFwid2hpdGVcIikuYXR0cihcInN0cm9rZS13aWR0aFwiLCAyLjUpO1xyXG5cclxuICAvLyBBeGVzXHJcbiAgc3ZnLmFwcGVuZChcImdcIilcclxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbi5ib3R0b219KWApXHJcbiAgICAuY2FsbChkMy5heGlzQm90dG9tKHgpLnRpY2tzKDYpLnRpY2tGb3JtYXQoZDMuZm9ybWF0KFwiLjJmXCIpKSlcclxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJ0ZXh0XCIpXHJcbiAgICAgIC5hdHRyKFwieFwiLCB3aWR0aCAvIDIpLmF0dHIoXCJ5XCIsIDQyKVxyXG4gICAgICAuYXR0cihcImZpbGxcIiwgXCIjNTU1XCIpLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcIm1pZGRsZVwiKVxyXG4gICAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCBcIjEzcHhcIilcclxuICAgICAgLnRleHQoXCJXb3JsZCBUcmFkZSBPcGVubmVzcyAoc2hhcmUgb2YgR0RQKVwiKSk7XHJcblxyXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXHJcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7bWFyZ2luLmxlZnR9LDApYClcclxuICAgIC5jYWxsKGQzLmF4aXNMZWZ0KHkpLnRpY2tzKDYpLnRpY2tGb3JtYXQoZDMuZm9ybWF0KFwiKy40ZlwiKSkpXHJcbiAgICAuY2FsbChnID0+IGcuYXBwZW5kKFwidGV4dFwiKVxyXG4gICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInJvdGF0ZSgtOTApXCIpXHJcbiAgICAgIC5hdHRyKFwieFwiLCAtaGVpZ2h0IC8gMikuYXR0cihcInlcIiwgLTU1KVxyXG4gICAgICAuYXR0cihcImZpbGxcIiwgXCIjNTU1XCIpLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcIm1pZGRsZVwiKVxyXG4gICAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCBcIjEzcHhcIilcclxuICAgICAgLnRleHQoXCJNYXJnaW5hbCBFZmZlY3Qgb2YgUHJveGltaXR5IG9uIENvbmZsaWN0XCIpKTtcclxuXHJcbiAgcmV0dXJuIHN2Zy5ub2RlKCk7XHJcbn1cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd0cmFkZU9wZW5uZXNzJykifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/qgallea\.github\.io\/gallea-rohner-interactive\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Gallea &amp; Rohner, <em>PNAS</em> 2021 · <a href="https://doi.org/10.1073/pnas.2105624118">Paper</a> · <a href="https://doi.org/10.7910/DVN/P4RJBC">Replication Data</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
