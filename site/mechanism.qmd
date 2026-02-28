@@ -163,7 +163,7 @@ viewof tradeLevel = Inputs.range([0.35, 0.60], {
 
 :::{.callout-note}
 ## Real-World Example
-In early 2020, France and the Netherlands deployed battleships to the Strait of Hormuz specifically to protect commercial shipping — a direct illustration of major powers intervening when trade stakes are high.
+In early 2020, France and the Netherlands deployed frigates to the Strait of Hormuz specifically to protect commercial shipping — a direct illustration of major powers intervening when trade stakes are high.
 :::
 
 > [Test this yourself](slider.qmd) — move the trade openness slider and watch the marginal effect flip sign.
