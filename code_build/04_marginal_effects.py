@@ -1,16 +1,17 @@
 """
 04_marginal_effects.py
-Pre-computes the marginal effects curve from Table 2 coefficients.
-Source: Gallea & Rohner (2021), Table 2, Column 1.
+Pre-computes the marginal effects curve.
+Source: Gallea & Rohner (2021), Figure 3 regression VCV (delta-method SEs from Stata margins).
 """
 import json
 import math
 import os
 
 beta1 = 0.0148
-se_beta1 = 0.0010
+se_beta1 = 0.001040
 beta2 = -0.0277
-se_beta2 = 0.008
+se_beta2 = 0.001751
+cov_beta12 = -0.000001507
 baseline = 0.015
 crossover = -beta1 / beta2
 
@@ -18,7 +19,7 @@ curve = []
 for i in range(251):
     trade = 0.35 + i * 0.001
     me = beta1 + beta2 * trade
-    se = math.sqrt(se_beta1**2 + trade**2 * se_beta2**2)
+    se = math.sqrt(se_beta1**2 + trade**2 * se_beta2**2 + 2 * trade * cov_beta12)
     curve.append({
         "trade": round(trade, 3),
         "me": round(me, 6),
