@@ -25,11 +25,11 @@ Areas closer to maritime choke points face significantly higher conflict risk â€
   <tbody>
     <tr class="highlight">
       <td style="text-align:left; font-weight:600;">Proximity to choke point</td>
-      <td>0.0070***<br><span style="color:#888; font-size:0.85em;">(0.0005)</span></td>
-      <td>0.0032***<br><span style="color:#888; font-size:0.85em;">(0.0003)</span></td>
-      <td>0.0009***<br><span style="color:#888; font-size:0.85em;">(0.0001)</span></td>
-      <td>0.0029***<br><span style="color:#888; font-size:0.85em;">(0.0003)</span></td>
-      <td>0.0234***<br><span style="color:#888; font-size:0.85em;">(0.0022)</span></td>
+      <td>0.0031***<br><span style="color:#888; font-size:0.85em;">(0.0004)</span></td>
+      <td>0.0022***<br><span style="color:#888; font-size:0.85em;">(0.0002)</span></td>
+      <td>0.0002***<br><span style="color:#888; font-size:0.85em;">(0.0001)</span></td>
+      <td>0.0007***<br><span style="color:#888; font-size:0.85em;">(0.0002)</span></td>
+      <td>0.0013<br><span style="color:#888; font-size:0.85em;">(0.0012)</span></td>
     </tr>
     <tr style="color:#999; font-size:0.9em;">
       <td style="text-align:left;">Latitude FE</td>
@@ -41,7 +41,7 @@ Areas closer to maritime choke points face significantly higher conflict risk â€
     </tr>
     <tr style="color:#999; font-size:0.9em; border-top: 2px solid #ddd;">
       <td style="text-align:left;">Mean dep. var.</td>
-      <td>0.015</td><td>0.007</td><td>0.002</td><td>0.006</td><td>0.054</td>
+      <td>0.015</td><td>0.007</td><td>0.002</td><td>0.006</td><td>0.035</td>
     </tr>
     <tr style="color:#999; font-size:0.9em;">
       <td style="text-align:left;">Observations</td>
@@ -74,18 +74,18 @@ The key result: proximity increases conflict when trade is low, but the interact
     <tr>
       <td style="text-align:left; font-weight:600;">Proximity to choke point</td>
       <td>0.0148***<br><span style="color:#888; font-size:0.85em;">(0.0010)</span></td>
-      <td>0.0073***<br><span style="color:#888; font-size:0.85em;">(0.0006)</span></td>
-      <td>0.0014***<br><span style="color:#888; font-size:0.85em;">(0.0003)</span></td>
-      <td>0.0059***<br><span style="color:#888; font-size:0.85em;">(0.0005)</span></td>
-      <td>0.0493***<br><span style="color:#888; font-size:0.85em;">(0.0044)</span></td>
+      <td>0.0052***<br><span style="color:#888; font-size:0.85em;">(0.0006)</span></td>
+      <td>0.0017***<br><span style="color:#888; font-size:0.85em;">(0.0003)</span></td>
+      <td>0.0079***<br><span style="color:#888; font-size:0.85em;">(0.0006)</span></td>
+      <td>0.0338***<br><span style="color:#888; font-size:0.85em;">(0.0032)</span></td>
     </tr>
     <tr class="highlight">
       <td style="text-align:left; font-weight:600;">Proximity x Trade Openness</td>
-      <td>-0.0277***<br><span style="color:#888; font-size:0.85em;">(0.0080)</span></td>
-      <td>-0.0127*<br><span style="color:#888; font-size:0.85em;">(0.0072)</span></td>
-      <td>-0.0013<br><span style="color:#888; font-size:0.85em;">(0.0019)</span></td>
-      <td>-0.0098**<br><span style="color:#888; font-size:0.85em;">(0.0048)</span></td>
-      <td>-0.0814**<br><span style="color:#888; font-size:0.85em;">(0.0316)</span></td>
+      <td>-0.0277***<br><span style="color:#888; font-size:0.85em;">(0.008)</span></td>
+      <td>-0.0087***<br><span style="color:#888; font-size:0.85em;">(0.0011)</span></td>
+      <td>-0.0034***<br><span style="color:#888; font-size:0.85em;">(0.0006)</span></td>
+      <td>-0.0156***<br><span style="color:#888; font-size:0.85em;">(0.0010)</span></td>
+      <td>-0.0711***<br><span style="color:#888; font-size:0.85em;">(0.0053)</span></td>
     </tr>
     <tr style="color:#999; font-size:0.9em;">
       <td style="text-align:left;">Latitude FE</td>
@@ -101,7 +101,7 @@ The key result: proximity increases conflict when trade is low, but the interact
     </tr>
     <tr style="color:#999; font-size:0.9em; border-top: 2px solid #ddd;">
       <td style="text-align:left;">Mean dep. var.</td>
-      <td>0.015</td><td>0.007</td><td>0.002</td><td>0.006</td><td>0.054</td>
+      <td>0.015</td><td>0.007</td><td>0.002</td><td>0.006</td><td>0.035</td>
     </tr>
     <tr style="color:#999; font-size:0.9em;">
       <td style="text-align:left;">Observations</td>
