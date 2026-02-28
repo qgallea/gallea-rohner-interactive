@@ -209,6 +209,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="table-1-proximity-and-conflict-baseline" class="level3">
 <h3 class="anchored" data-anchor-id="table-1-proximity-and-conflict-baseline">Table 1: Proximity and Conflict (Baseline)</h3>
 <p>Areas closer to maritime choke points face significantly higher conflict risk — across all types of violence.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What do the column headers mean?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Any Event</strong>: Any type of armed conflict</li>
+<li><strong>State-based</strong>: Fighting involving a government (e.g., civil wars, interstate wars)</li>
+<li><strong>Non-state</strong>: Fighting between non-government armed groups (e.g., militias, rebel factions)</li>
+<li><strong>One-sided</strong>: Violence by an organized group against civilians</li>
+<li><strong>ln(deaths+1)</strong>: Logged death count — captures conflict <em>intensity</em>, not just occurrence</li>
+</ul>
+</div>
+</div>
+</div>
 <table class="regression-table">
 <thead>
 <tr>
@@ -332,7 +354,7 @@ Observations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Each column uses a different measure of conflict. The highlighted row shows that proximity to a choke point (measured in log-km) is a significant predictor of violence in all specifications. Standard errors (in parentheses) are clustered at the grid cell level. *** indicates significance at the 1% level.</p>
+<p>Each column uses a different measure of conflict. The coefficient in the highlighted row tells you: for each unit increase in proximity (one SD = 1,100 km closer), how much does conflict risk change? Standard errors (in parentheses) measure precision — smaller is better. *** means the result is statistically significant at the 1% level. “FE” stands for fixed effects — statistical controls that account for differences across latitudes, countries, or years.</p>
 </div>
 </div>
 </section>
@@ -492,54 +514,55 @@ Observations
 </tr>
 </tbody>
 </table>
+<p><strong>In plain English:</strong> Column 1 shows that being near a choke point increases conflict risk (positive coefficient), but this effect shrinks — and eventually reverses — as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.</p>
 </section>
 <section id="the-two-worlds-comparison" class="level3">
 <h3 class="anchored" data-anchor-id="the-two-worlds-comparison">The “Two Worlds” Comparison</h3>
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="116" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 115;"><span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> beta1 <span class="op">=</span> <span class="fl">0.0148</span><span class="op">;</span></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> beta2 <span class="op">=</span> <span class="op">-</span><span class="fl">0.0277</span><span class="op">;</span></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> baseline <span class="op">=</span> <span class="fl">0.015</span><span class="op">;</span></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> meLow <span class="op">=</span> beta1 <span class="op">+</span> beta2 <span class="op">*</span> <span class="fl">0.40</span><span class="op">;</span></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> meHigh <span class="op">=</span> beta1 <span class="op">+</span> beta2 <span class="op">*</span> <span class="fl">0.60</span><span class="op">;</span></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pctLow <span class="op">=</span> (meLow <span class="op">/</span> baseline <span class="op">*</span> <span class="dv">100</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pctHigh <span class="op">=</span> (meHigh <span class="op">/</span> baseline <span class="op">*</span> <span class="dv">100</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;"&gt;</span></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="flex: 1; min-width: 280px; background: #ffebee; border-radius: 8px; padding: 1.5rem;"&gt;</span></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-weight: 700; color: #c62828; font-size: 1.1rem; margin-bottom: 0.5rem;"&gt;</span></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="vs">        World 1: Low Globalization</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="color: #555; font-size: 0.95rem;"&gt;</span></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="vs">        Trade openness = 0.40 (early 1990s)</span></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; color: #c62828; margin: 1rem 0;"&gt;</span></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="vs">        ME = </span><span class="sc">${</span>meLow <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'+'</span> <span class="op">:</span> <span class="st">''</span><span class="sc">}${</span>meLow<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-size: 0.95rem;"&gt;</span></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait &lt;strong style="color: #c62828;"&gt;increases&lt;/strong&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span>pctLow<span class="sc">}</span><span class="vs">%&lt;/strong&gt; of baseline</span></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="flex: 1; min-width: 280px; background: #e8f5e9; border-radius: 8px; padding: 1.5rem;"&gt;</span></span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-weight: 700; color: #2e7d32; font-size: 1.1rem; margin-bottom: 0.5rem;"&gt;</span></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="vs">        World 2: High Globalization</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="127" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 126;"><span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> beta1 <span class="op">=</span> <span class="fl">0.0148</span><span class="op">;</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> beta2 <span class="op">=</span> <span class="op">-</span><span class="fl">0.0277</span><span class="op">;</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> baseline <span class="op">=</span> <span class="fl">0.015</span><span class="op">;</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> meLow <span class="op">=</span> beta1 <span class="op">+</span> beta2 <span class="op">*</span> <span class="fl">0.40</span><span class="op">;</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> meHigh <span class="op">=</span> beta1 <span class="op">+</span> beta2 <span class="op">*</span> <span class="fl">0.60</span><span class="op">;</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pctLow <span class="op">=</span> (meLow <span class="op">/</span> baseline <span class="op">*</span> <span class="dv">100</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pctHigh <span class="op">=</span> (meHigh <span class="op">/</span> baseline <span class="op">*</span> <span class="dv">100</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;"&gt;</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="flex: 1; min-width: 280px; background: #ffebee; border-radius: 8px; padding: 1.5rem;"&gt;</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-weight: 700; color: #c62828; font-size: 1.1rem; margin-bottom: 0.5rem;"&gt;</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="vs">        World 1: Low Globalization</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="color: #555; font-size: 0.95rem;"&gt;</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="vs">        Trade openness = 0.40 (early 1990s)</span></span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="color: #555; font-size: 0.95rem;"&gt;</span></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="vs">        Trade openness = 0.60 (mid-2000s peak)</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; color: #c62828; margin: 1rem 0;"&gt;</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="vs">        ME = </span><span class="sc">${</span>meLow <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'+'</span> <span class="op">:</span> <span class="st">''</span><span class="sc">}${</span>meLow<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span></span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; color: #2e7d32; margin: 1rem 0;"&gt;</span></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="vs">        ME = </span><span class="sc">${</span>meHigh<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-size: 0.95rem;"&gt;</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait &lt;strong style="color: #c62828;"&gt;increases&lt;/strong&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span>pctLow<span class="sc">}</span><span class="vs">%&lt;/strong&gt; of baseline</span></span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-size: 0.95rem;"&gt;</span></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait &lt;strong style="color: #2e7d32;"&gt;decreases&lt;/strong&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(pctHigh)<span class="sc">}</span><span class="vs">%&lt;/strong&gt; of baseline</span></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span><span class="op">;</span></span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="flex: 1; min-width: 280px; background: #e8f5e9; border-radius: 8px; padding: 1.5rem;"&gt;</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-weight: 700; color: #2e7d32; font-size: 1.1rem; margin-bottom: 0.5rem;"&gt;</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="vs">        World 2: High Globalization</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="color: #555; font-size: 0.95rem;"&gt;</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="vs">        Trade openness = 0.60 (mid-2000s peak)</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; color: #2e7d32; margin: 1rem 0;"&gt;</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="vs">        ME = </span><span class="sc">${</span>meHigh<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-size: 0.95rem;"&gt;</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait &lt;strong style="color: #2e7d32;"&gt;decreases&lt;/strong&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(pctHigh)<span class="sc">}</span><span class="vs">%&lt;/strong&gt; of baseline</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="expression">
