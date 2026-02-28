@@ -1,0 +1,173 @@
+---
+title: "Policy Implications"
+description: "Why global security coordination is a public good — and why we're free-riding"
+---
+
+## The Collective Action Problem
+
+The findings reveal an uncomfortable truth: peace near strategic waterways is currently a **byproduct of self-interest**, not coordinated policy.
+
+When trade is booming, major powers protect choke points because it serves their economic interests. But this protection is unreliable — it depends on trade volumes and the self-interest calculus of a few powerful nations.
+
+:::{.callout-warning}
+## The Free-Rider Problem
+As Mancur Olson (1965) showed, public goods are underprovided when everyone benefits but no one wants to pay the cost. Global maritime security is a textbook case: every nation benefits from open shipping lanes, but intervention is costly and risky.
+:::
+
+## What This Means for Policy
+
+The research points toward three implications:
+
+**1. Supranational coordination matters.** Relying on major powers' self-interest is insufficient. Organizations like the United Nations should play a larger role in guaranteeing safe maritime passage — especially during periods of low trade.
+
+**2. Trade agreements are security agreements.** The data shows that trade openness itself reduces conflict in strategic locations. Trade policy and security policy are more intertwined than commonly assumed.
+
+**3. Deglobalization carries security risks.** If world trade openness declines — as some current trends suggest — the protective effect weakens, and strategic locations become more contested again.
+
+## World Trade Openness Over Time
+
+```{ojs}
+//| echo: false
+
+tradeData = FileAttachment("data/trade_openness.json").json()
+```
+
+```{ojs}
+//| echo: false
+
+{
+  const width = 700;
+  const height = 350;
+  const margin = {top: 30, right: 30, bottom: 50, left: 60};
+
+  const crossover = 0.534;
+
+  const x = d3.scaleLinear()
+    .domain(d3.extent(tradeData, d => d.year))
+    .range([margin.left, width - margin.right]);
+
+  const yExtent = d3.extent(tradeData, d => d.trade_openness);
+  const y = d3.scaleLinear()
+    .domain([Math.min(yExtent[0], 0.34), Math.max(yExtent[1], 0.62)])
+    .range([height - margin.bottom, margin.top]);
+
+  const svg = d3.create("svg")
+    .attr("viewBox", [0, 0, width, height])
+    .attr("width", width)
+    .attr("height", height)
+    .style("max-width", "100%")
+    .style("font-family", "'Source Sans 3', sans-serif");
+
+  // Danger zone (below crossover)
+  svg.append("rect")
+    .attr("x", margin.left).attr("y", y(crossover))
+    .attr("width", width - margin.left - margin.right)
+    .attr("height", y(0.34) - y(crossover))
+    .attr("fill", "#ffebee").attr("opacity", 0.5);
+
+  // Safe zone (above crossover)
+  svg.append("rect")
+    .attr("x", margin.left).attr("y", y(0.62))
+    .attr("width", width - margin.left - margin.right)
+    .attr("height", y(crossover) - y(0.62))
+    .attr("fill", "#e8f5e9").attr("opacity", 0.5);
+
+  // Zone labels
+  svg.append("text")
+    .attr("x", width - margin.right - 5).attr("y", y(crossover) + 15)
+    .attr("text-anchor", "end").attr("fill", "#c62828")
+    .attr("font-size", "10px").attr("font-weight", "600")
+    .text("CONFLICT ZONE");
+
+  svg.append("text")
+    .attr("x", width - margin.right - 5).attr("y", y(crossover) - 6)
+    .attr("text-anchor", "end").attr("fill", "#2e7d32")
+    .attr("font-size", "10px").attr("font-weight", "600")
+    .text("PEACE ZONE");
+
+  // Crossover line
+  svg.append("line")
+    .attr("x1", margin.left).attr("x2", width - margin.right)
+    .attr("y1", y(crossover)).attr("y2", y(crossover))
+    .attr("stroke", "#7e57c2").attr("stroke-dasharray", "6,3").attr("stroke-width", 1.5);
+
+  svg.append("text")
+    .attr("x", margin.left + 5).attr("y", y(crossover) - 6)
+    .attr("fill", "#7e57c2").attr("font-size", "10px")
+    .text(`Tipping point: ${crossover}`);
+
+  // Trade openness line
+  const line = d3.line()
+    .x(d => x(d.year))
+    .y(d => y(d.trade_openness))
+    .curve(d3.curveMonotoneX);
+
+  svg.append("path")
+    .datum(tradeData)
+    .attr("d", line)
+    .attr("fill", "none")
+    .attr("stroke", "#1a237e")
+    .attr("stroke-width", 2.5);
+
+  // Data points
+  svg.append("g")
+    .selectAll("circle")
+    .data(tradeData)
+    .join("circle")
+    .attr("cx", d => x(d.year))
+    .attr("cy", d => y(d.trade_openness))
+    .attr("r", 3)
+    .attr("fill", d => d.trade_openness >= crossover ? "#43a047" : "#e53935");
+
+  // Annotations for key events
+  const annotations = [
+    {year: 1991, label: "End of Cold War", dy: -15},
+    {year: 2001, label: "China joins WTO", dy: 20},
+    {year: 2008, label: "Financial crisis", dy: -15},
+  ];
+
+  for (const a of annotations) {
+    const datum = tradeData.find(d => d.year === a.year);
+    if (datum) {
+      svg.append("line")
+        .attr("x1", x(a.year)).attr("x2", x(a.year))
+        .attr("y1", y(datum.trade_openness) + (a.dy > 0 ? 6 : -6))
+        .attr("y2", y(datum.trade_openness) + a.dy)
+        .attr("stroke", "#999").attr("stroke-width", 1);
+
+      svg.append("text")
+        .attr("x", x(a.year)).attr("y", y(datum.trade_openness) + a.dy + (a.dy > 0 ? 12 : -4))
+        .attr("text-anchor", "middle").attr("fill", "#666")
+        .attr("font-size", "9px").attr("font-weight", "600")
+        .text(a.label);
+    }
+  }
+
+  // Axes
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x).ticks(8).tickFormat(d3.format("d")))
+    .call(g => g.append("text")
+      .attr("x", width / 2).attr("y", 40)
+      .attr("fill", "#555").attr("text-anchor", "middle")
+      .attr("font-size", "13px")
+      .text("Year"));
+
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(6).tickFormat(d3.format(".2f")))
+    .call(g => g.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2).attr("y", -45)
+      .attr("fill", "#555").attr("text-anchor", "middle")
+      .attr("font-size", "13px")
+      .text("World Trade Openness (share of GDP)"));
+
+  return svg.node();
+}
+```
+
+:::{.callout-tip}
+## Reading the chart
+Each dot represents one year of global trade openness. When trade is **above the tipping point** (0.534), proximity to choke points reduces conflict. When trade drops **below**, the protective effect vanishes. Notice how the 2008 financial crisis pushed trade back toward the danger zone.
+:::

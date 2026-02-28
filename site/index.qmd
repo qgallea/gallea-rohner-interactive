@@ -1,0 +1,64 @@
+---
+title: ""
+description: "An interactive exploration of how globalization shapes conflict near strategic waterways"
+page-layout: custom
+---
+
+:::{.column-screen}
+<div style="padding: 6rem 5% 4rem; max-width: 900px; margin: 0 auto;">
+
+<span class="journal-badge">PNAS · 2021</span>
+
+<h1 class="hero-title">Globalization Mitigates the Risk of Conflict Caused by Strategic Territory</h1>
+
+<p class="hero-subtitle">
+An interactive exploration of the research by <strong>Quentin Gallea</strong> & <strong>Dominic Rohner</strong>
+</p>
+
+<div style="margin-top: 3rem; display: flex; gap: 3rem; flex-wrap: wrap;">
+
+<div>
+<div class="key-number">1.9M</div>
+<div class="key-number-label">Observations</div>
+</div>
+
+<div>
+<div class="key-number">30</div>
+<div class="key-number-label">Years (1989–2018)</div>
+</div>
+
+<div>
+<div class="key-number">64,818</div>
+<div class="key-number-label">Grid Cells Worldwide</div>
+</div>
+
+</div>
+
+</div>
+:::
+
+---
+
+## The Question
+
+Since ancient times, controlling strategic trade routes has been both lucrative and violently contested — from the Strait of Salamis in 480 BC to the Strait of Kerch in 2018.
+
+**Does globalization make this better or worse?**
+
+Two competing views have clashed for centuries:
+
+:::{.callout-note icon=false}
+## 🔴 Lenin's View (1917)
+Trade and economic integration *fuel* conflict by making strategic locations more valuable and worth fighting over.
+:::
+
+:::{.callout-note icon=false}
+## 🟢 Montesquieu's View (1758)
+Trade *curbs* conflict by fostering interdependence — when everyone benefits from open trade routes, there's more incentive to keep the peace.
+:::
+
+This research puts both views to the test. The answer? **It depends on how much trade is flowing.**
+
+→ [Explore the map](map.qmd) to see where strategic choke points are and how conflict clusters around them.
+
+→ [Move the slider](slider.qmd) to discover the tipping point where globalization flips from curse to cure.

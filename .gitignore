@@ -1,0 +1,27 @@
+# Raw data (large files)
+raw_data/replication_data/*.dta
+raw_data/replication_data/*.csv
+raw_data/replication_data/*.do
+raw_data/replication_data/*.zip
+
+# Quarto build output
+output/
+site/.quarto/
+site/_site/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Node (if used)
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

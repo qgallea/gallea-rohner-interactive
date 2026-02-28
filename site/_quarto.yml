@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: ../output
+
+website:
+  title: "Globalization & Conflict"
+  navbar:
+    background: "#1a237e"
+    foreground: "#ffffff"
+    left:
+      - text: Home
+        href: index.qmd
+      - text: The Map
+        href: map.qmd
+      - text: Mechanism
+        href: mechanism.qmd
+      - text: Explore
+        href: slider.qmd
+      - text: Evidence
+        href: evidence.qmd
+      - text: Policy
+        href: policy.qmd
+      - text: About
+        href: about.qmd
+  page-footer:
+    center: |
+      Gallea & Rohner, *PNAS* 2021 · [Paper](https://doi.org/10.1073/pnas.2105624118) · [Replication Data](https://doi.org/10.7910/DVN/P4RJBC)
+    background: "#f5f5f0"
+
+  page-navigation: true
+  reader-mode: false
+
+format:
+  html:
+    theme:
+      light: [litera, styles/custom.scss]
+    css: []
+    toc: true
+    toc-depth: 2
+    smooth-scroll: true
+    anchor-sections: true
+    code-fold: true
+    code-tools: false
+    fig-responsive: true
+    page-layout: full
+
+execute:
+  freeze: auto
+  echo: false
+  warning: false

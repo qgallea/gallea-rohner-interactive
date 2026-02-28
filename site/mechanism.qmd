@@ -1,0 +1,169 @@
+---
+title: "The Mechanism"
+description: "A game-theoretic model of strategic territory, conflict, and trade"
+---
+
+## Why Does Globalization Change the Calculus?
+
+The paper builds a formal game-theoretic model. The intuition is straightforward:
+
+```{ojs}
+//| echo: false
+
+viewof tradeLevel = Inputs.range([0.35, 0.60], {
+  value: 0.40,
+  step: 0.01,
+  label: "Trade openness level"
+})
+```
+
+```{ojs}
+//| echo: false
+
+{
+  const width = 700;
+  const height = 400;
+  const isLow = tradeLevel < 0.534;
+
+  // Normalized position of trade on [0, 1]
+  const t = (tradeLevel - 0.35) / (0.60 - 0.35);
+
+  const svg = d3.create("svg")
+    .attr("viewBox", [0, 0, width, height])
+    .style("max-width", "100%")
+    .style("font-family", "'Source Sans 3', sans-serif");
+
+  // Background
+  svg.append("rect")
+    .attr("width", width).attr("height", height)
+    .attr("fill", isLow ? "#fff8f0" : "#f0fff4")
+    .attr("rx", 8);
+
+  // --- NODES ---
+  const nodes = [
+    {id: "strategic", label: "Strategic Value", sublabel: "of location near choke point", x: 350, y: 60, color: "#ff9800"},
+    {id: "incentive", label: "Incentive to Fight", sublabel: "local actors contest territory", x: 170, y: 200, color: isLow ? "#e53935" : "#66bb6a"},
+    {id: "intervention", label: "Major Power Intervention", sublabel: "protect trade routes", x: 530, y: 200, color: "#42a5f5"},
+    {id: "conflict", label: isLow ? "MORE Conflict" : "LESS Conflict", sublabel: "near choke points", x: 350, y: 340, color: isLow ? "#c62828" : "#2e7d32"},
+  ];
+
+  // --- ARROWS ---
+  // Strategic -> Incentive
+  svg.append("line")
+    .attr("x1", 290).attr("y1", 90).attr("x2", 210).attr("y2", 175)
+    .attr("stroke", "#e53935").attr("stroke-width", 2 + (1 - t) * 3)
+    .attr("marker-end", "url(#arrow-red)");
+
+  // Strategic -> Intervention
+  svg.append("line")
+    .attr("x1", 410).attr("y1", 90).attr("x2", 490).attr("y2", 175)
+    .attr("stroke", "#42a5f5").attr("stroke-width", 1 + t * 4)
+    .attr("marker-end", "url(#arrow-blue)");
+
+  // Incentive -> Conflict
+  svg.append("line")
+    .attr("x1", 210).attr("y1", 230).attr("x2", 310).attr("y2", 315)
+    .attr("stroke", "#e53935").attr("stroke-width", 2 + (1 - t) * 3)
+    .attr("stroke-opacity", 0.4 + (1 - t) * 0.6)
+    .attr("marker-end", "url(#arrow-red)");
+
+  // Intervention -> Conflict (suppressive)
+  svg.append("line")
+    .attr("x1", 490).attr("y1", 230).attr("x2", 390).attr("y2", 315)
+    .attr("stroke", "#42a5f5").attr("stroke-width", 1 + t * 4)
+    .attr("stroke-opacity", 0.3 + t * 0.7)
+    .attr("marker-end", "url(#arrow-blue)");
+
+  // Trade openness -> Intervention (moderating arrow)
+  svg.append("text")
+    .attr("x", 610).attr("y", 125)
+    .attr("text-anchor", "middle").attr("fill", "#1a237e")
+    .attr("font-size", "11px").attr("font-weight", "700")
+    .text("Trade Openness");
+
+  svg.append("text")
+    .attr("x", 610).attr("y", 142)
+    .attr("text-anchor", "middle").attr("fill", "#555")
+    .attr("font-size", "10px")
+    .text(`= ${tradeLevel.toFixed(2)}`);
+
+  svg.append("line")
+    .attr("x1", 590).attr("y1", 150).attr("x2", 555).attr("y2", 185)
+    .attr("stroke", "#1a237e").attr("stroke-width", 1.5 + t * 2)
+    .attr("stroke-dasharray", "4,3")
+    .attr("marker-end", "url(#arrow-navy)");
+
+  // Arrow markers
+  const defs = svg.append("defs");
+  for (const [id, color] of [["arrow-red", "#e53935"], ["arrow-blue", "#42a5f5"], ["arrow-navy", "#1a237e"]]) {
+    defs.append("marker")
+      .attr("id", id).attr("viewBox", "0 0 10 10")
+      .attr("refX", 8).attr("refY", 5)
+      .attr("markerWidth", 6).attr("markerHeight", 6)
+      .attr("orient", "auto")
+      .append("path")
+      .attr("d", "M 0 0 L 10 5 L 0 10 z")
+      .attr("fill", color);
+  }
+
+  // Draw node boxes
+  for (const node of nodes) {
+    const g = svg.append("g")
+      .attr("transform", `translate(${node.x}, ${node.y})`);
+
+    g.append("rect")
+      .attr("x", -80).attr("y", -22)
+      .attr("width", 160).attr("height", 44)
+      .attr("rx", 6)
+      .attr("fill", "white")
+      .attr("stroke", node.color)
+      .attr("stroke-width", 2);
+
+    g.append("text")
+      .attr("text-anchor", "middle").attr("y", -4)
+      .attr("font-size", "12px").attr("font-weight", "700")
+      .attr("fill", node.color)
+      .text(node.label);
+
+    g.append("text")
+      .attr("text-anchor", "middle").attr("y", 14)
+      .attr("font-size", "9px")
+      .attr("fill", "#888")
+      .text(node.sublabel);
+  }
+
+  return svg.node();
+}
+```
+
+```{ojs}
+//| echo: false
+
+{
+  const isLow = tradeLevel < 0.534;
+  return htl.html`
+  <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0;">
+    <div style="flex: 1; min-width: 280px; background: ${isLow ? '#fff3e0' : '#f5f5f5'}; padding: 1.5rem; border-radius: 8px; border-left: 4px solid ${isLow ? '#e53935' : '#ccc'};">
+      <p style="font-size: 1.05rem;">
+        Strategic territory has <strong>${isLow ? 'high' : 'some'} local value</strong> → local actors ${isLow ? '' : 'may'} fight to control it<br>
+        Major powers have <strong>${isLow ? 'low' : 'moderate'} stakes</strong> in the region → they ${isLow ? "don't" : 'may not'} intervene<br>
+        <span style="color: #e53935;"><strong>→ More conflict near choke points</strong></span>
+      </p>
+    </div>
+    <div style="flex: 1; min-width: 280px; background: ${!isLow ? '#e8f5e9' : '#f5f5f5'}; padding: 1.5rem; border-radius: 8px; border-left: 4px solid ${!isLow ? '#43a047' : '#ccc'};">
+      <p style="font-size: 1.05rem;">
+        Global trade flows through these straits → <strong>everyone depends on them</strong><br>
+        Major powers have <strong>high stakes</strong> → they intervene to keep routes open<br>
+        <span style="color: #43a047;"><strong>→ Less conflict near choke points</strong></span>
+      </p>
+    </div>
+  </div>`;
+}
+```
+
+:::{.callout-note}
+## Real-World Example
+In early 2020, France and the Netherlands deployed battleships to the Strait of Hormuz specifically to protect commercial shipping — a direct illustration of major powers intervening when trade stakes are high.
+:::
+
+> [Test this yourself](slider.qmd) — move the trade openness slider and watch the marginal effect flip sign.

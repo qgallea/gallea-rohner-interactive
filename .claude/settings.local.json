@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:\\\\Users\\\\qgallea\\\\Dropbox\\\\PhD\\\\gallea-rohner-interactive\\\\raw_data\\\\replication_data\"\" -type f -name \"* \")",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(quarto check:*)"
+    ]
+  }
+}

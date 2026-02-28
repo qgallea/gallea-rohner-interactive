@@ -1,0 +1,194 @@
+/*-- scss:defaults --*/
+
+// Typography — editorial, distinctive
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+$font-family-serif: 'Playfair Display', Georgia, serif;
+$font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 700;
+
+$font-size-base: 1.05rem;
+$line-height-base: 1.7;
+$paragraph-margin-bottom: 1.25rem;
+
+// Color palette — from the paper
+$primary:       #1a237e;   // Deep navy
+$secondary:     #42a5f5;   // Medium blue (proximity)
+$success:       #43a047;   // Green (peace / trade benefit)
+$danger:        #e53935;   // Red (conflict)
+$warning:       #ff9800;   // Orange (choke point markers)
+$info:          #7e57c2;   // Purple (crossover / tipping point)
+
+$body-bg:       #fafaf8;   // Warm white
+$body-color:    #1a1a1a;   // Near-black
+
+$link-color:    $primary;
+
+// Layout
+$max-width:     960px;
+$border-radius: 4px;
+
+/*-- scss:rules --*/
+
+// Hero title styling
+.hero-title {
+  font-family: $font-family-serif;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  color: $primary;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-family: $font-family-sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #555;
+  margin-top: 0.75rem;
+}
+
+// Journal badge
+.journal-badge {
+  display: inline-block;
+  background: $primary;
+  color: white;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3em 0.8em;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+// Section styling — generous spacing
+.quarto-section {
+  padding: 5rem 0;
+}
+
+// Full-width breakout for maps and charts
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 2rem 5%;
+}
+
+// Data callout boxes
+.data-callout {
+  background: #f0f4ff;
+  border-left: 4px solid $primary;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 $border-radius $border-radius 0;
+  font-size: 0.95rem;
+}
+
+.data-callout strong {
+  color: $primary;
+}
+
+// Key number highlight
+.key-number {
+  font-family: $font-family-monospace;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: $primary;
+  line-height: 1.2;
+}
+
+.key-number-label {
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Conflict/peace color classes for OJS charts
+.color-conflict { color: $danger; }
+.color-peace { color: $success; }
+.color-strategic { color: $warning; }
+.color-crossover { color: $info; }
+
+// Slider custom styling
+.trade-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, $danger, #ffd54f, $success);
+  outline: none;
+  margin: 1.5rem 0;
+}
+
+.trade-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $primary;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+// Table styling — cleaner than default
+.regression-table {
+  font-size: 0.9rem;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.regression-table th {
+  background: $primary;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.regression-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.regression-table .highlight {
+  background: #fff3e0;
+  font-weight: 600;
+}
+
+// Smooth scroll-triggered fade-in
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Override Quarto navbar to match palette
+.navbar {
+  font-family: $font-family-sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+// Footer styling
+.quarto-footer {
+  font-size: 0.85rem;
+  color: #777;
+}

@@ -1,0 +1,194 @@
+---
+title: "Explore the Effect"
+description: "Move the slider to discover when globalization flips from curse to cure"
+---
+
+## The Tipping Point
+
+The core finding of the paper comes down to one equation:
+
+$$
+\text{Marginal Effect of Proximity} = \underbrace{0.0148}_{\beta_1 > 0} + \underbrace{(-0.0277)}_{\beta_2 < 0} \times \text{Trade Openness}
+$$
+
+When trade openness is **low**, the marginal effect is **positive** — being near a choke point means more conflict. When trade openness is **high** enough, the effect **flips negative** — globalization protects strategic locations.
+
+**Move the slider to find the tipping point.**
+
+---
+
+:::{.column-page}
+
+```{ojs}
+//| echo: false
+
+// === THE SLIDER ===
+viewof tradeOpenness = Inputs.range([0.35, 0.60], {
+  value: 0.47,
+  step: 0.001,
+  label: "World Trade Openness (share of GDP)"
+})
+
+// === COEFFICIENTS (from Table 2, Column 1) ===
+beta1 = 0.0148
+beta2 = -0.0277
+se_beta1 = 0.0010
+se_beta2 = 0.008
+baselineRisk = 0.015
+crossover = -beta1 / beta2
+
+// === COMPUTED VALUES ===
+me = beta1 + beta2 * tradeOpenness
+pctBaseline = (me / baselineRisk * 100)
+
+// === DYNAMIC INTERPRETATION ===
+htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; margin: 1rem auto;">
+  <strong>Trade Openness</strong>: ${tradeOpenness.toFixed(3)}
+  &nbsp;·&nbsp;
+  <strong>Marginal Effect</strong>: <span style="color: ${me > 0 ? '#e53935' : '#43a047'}; font-weight: 700;">${me > 0 ? '+' : ''}${me.toFixed(4)}</span>
+  <br><br>
+  Being <strong>1,100 km closer</strong> to a maritime choke point (Paris → Rome)
+  ${me > 0
+    ? htl.html`<span style="color: #e53935;"><strong>increases</strong></span> conflict risk by <strong>${pctBaseline.toFixed(1)}%</strong> relative to baseline.`
+    : htl.html`<span style="color: #43a047;"><strong>decreases</strong></span> conflict risk by <strong>${Math.abs(pctBaseline).toFixed(1)}%</strong> relative to baseline.`
+  }
+  ${Math.abs(tradeOpenness - crossover) < 0.005
+    ? htl.html`<br><br><span style="color: #7e57c2; font-weight: 600;">⚡ You've found the tipping point! At trade ≈ ${crossover.toFixed(3)}, the effect is zero.</span>`
+    : ''
+  }
+</div>`
+
+// === THE CHART ===
+{
+  const width = 700;
+  const height = 380;
+  const margin = {top: 30, right: 50, bottom: 55, left: 70};
+
+  const tradeRange = d3.range(0.35, 0.601, 0.001);
+  const meData = tradeRange.map(t => {
+    const meVal = beta1 + beta2 * t;
+    const seVal = Math.sqrt(se_beta1**2 + t**2 * se_beta2**2);
+    return { trade: t, me: meVal, se: seVal };
+  });
+
+  const x = d3.scaleLinear()
+    .domain([0.35, 0.60])
+    .range([margin.left, width - margin.right]);
+
+  const yExtent = d3.extent(meData, d => d.me);
+  const yPad = (yExtent[1] - yExtent[0]) * 0.3;
+  const y = d3.scaleLinear()
+    .domain([yExtent[0] - yPad, yExtent[1] + yPad])
+    .range([height - margin.bottom, margin.top]);
+
+  const svg = d3.create("svg")
+    .attr("viewBox", [0, 0, width, height])
+    .attr("width", width)
+    .attr("height", height)
+    .style("max-width", "100%")
+    .style("font-family", "'Source Sans 3', sans-serif");
+
+  // Background zones
+  svg.append("rect")
+    .attr("x", margin.left).attr("y", margin.top)
+    .attr("width", x(crossover) - margin.left)
+    .attr("height", height - margin.top - margin.bottom)
+    .attr("fill", "#ffebee").attr("opacity", 0.4);
+
+  svg.append("rect")
+    .attr("x", x(crossover)).attr("y", margin.top)
+    .attr("width", width - margin.right - x(crossover))
+    .attr("height", height - margin.top - margin.bottom)
+    .attr("fill", "#e8f5e9").attr("opacity", 0.4);
+
+  // Zone labels
+  svg.append("text")
+    .attr("x", (margin.left + x(crossover)) / 2).attr("y", margin.top + 18)
+    .attr("text-anchor", "middle").attr("fill", "#c62828")
+    .attr("font-size", "11px").attr("font-weight", "600")
+    .text("CONFLICT ZONE");
+
+  svg.append("text")
+    .attr("x", (x(crossover) + width - margin.right) / 2).attr("y", margin.top + 18)
+    .attr("text-anchor", "middle").attr("fill", "#2e7d32")
+    .attr("font-size", "11px").attr("font-weight", "600")
+    .text("PEACE ZONE");
+
+  // 99% CI band
+  svg.append("path")
+    .datum(meData)
+    .attr("d", d3.area()
+      .x(d => x(d.trade))
+      .y0(d => y(d.me - 2.576 * d.se))
+      .y1(d => y(d.me + 2.576 * d.se)))
+    .attr("fill", "#42a5f5").attr("opacity", 0.12);
+
+  // 90% CI band
+  svg.append("path")
+    .datum(meData)
+    .attr("d", d3.area()
+      .x(d => x(d.trade))
+      .y0(d => y(d.me - 1.645 * d.se))
+      .y1(d => y(d.me + 1.645 * d.se)))
+    .attr("fill", "#42a5f5").attr("opacity", 0.22);
+
+  // ME line
+  svg.append("path")
+    .datum(meData)
+    .attr("d", d3.line().x(d => x(d.trade)).y(d => y(d.me)))
+    .attr("fill", "none").attr("stroke", "#1a237e").attr("stroke-width", 2.5);
+
+  // Zero line
+  svg.append("line")
+    .attr("x1", margin.left).attr("x2", width - margin.right)
+    .attr("y1", y(0)).attr("y2", y(0))
+    .attr("stroke", "#999").attr("stroke-dasharray", "4,3");
+
+  // Crossover line
+  svg.append("line")
+    .attr("x1", x(crossover)).attr("x2", x(crossover))
+    .attr("y1", margin.top).attr("y2", height - margin.bottom)
+    .attr("stroke", "#7e57c2").attr("stroke-dasharray", "6,3").attr("stroke-width", 1.5);
+
+  svg.append("text")
+    .attr("x", x(crossover) + 6).attr("y", margin.top + 35)
+    .attr("fill", "#7e57c2").attr("font-size", "11px")
+    .text(`Tipping point: ${crossover.toFixed(3)}`);
+
+  // Current position dot
+  svg.append("circle")
+    .attr("cx", x(tradeOpenness)).attr("cy", y(me))
+    .attr("r", 7)
+    .attr("fill", me > 0 ? "#e53935" : "#43a047")
+    .attr("stroke", "white").attr("stroke-width", 2.5);
+
+  // Axes
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x).ticks(6).tickFormat(d3.format(".2f")))
+    .call(g => g.append("text")
+      .attr("x", width / 2).attr("y", 42)
+      .attr("fill", "#555").attr("text-anchor", "middle")
+      .attr("font-size", "13px")
+      .text("World Trade Openness (share of GDP)"));
+
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(6).tickFormat(d3.format("+.4f")))
+    .call(g => g.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -height / 2).attr("y", -55)
+      .attr("fill", "#555").attr("text-anchor", "middle")
+      .attr("font-size", "13px")
+      .text("Marginal Effect of Proximity on Conflict"));
+
+  return svg.node();
+}
+```
+
+:::
+
+:::{.callout-tip}
+## How to read this chart
+The **blue line** shows how much conflict risk changes when a location moves 1,100 km closer to a maritime choke point (one standard deviation), at different levels of world trade openness. The **shaded bands** show 90% and 99% confidence intervals. The **purple dashed line** marks the tipping point where the effect crosses zero.
+:::

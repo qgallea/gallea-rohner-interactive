@@ -1,0 +1,51 @@
+---
+title: "About"
+description: "Authors, citation, data availability, and how this site was built"
+---
+
+## The Paper
+
+**Globalization mitigates the risk of conflict caused by strategic territory**
+Quentin Gallea & Dominic Rohner
+*Proceedings of the National Academy of Sciences (PNAS)*, Vol. 118, No. 39, 2021.
+
+DOI: [10.1073/pnas.2105624118](https://doi.org/10.1073/pnas.2105624118)
+
+## Authors
+
+**Quentin Gallea** — Lecturer in Econometrics & Causal Inference, EPFL & University of Lausanne. Author of *The Causal Mindset Handbook* (Packt, 2026). Specialist in making causal inference accessible to researchers, executives, and the public.
+
+**Dominic Rohner** — Professor, Department of Economics, HEC Lausanne, University of Lausanne. Centre for Economic Policy Research (CEPR), London. Supported by ERC Starting Grant POLICIES FOR PEACE-677 595.
+
+## Data & Replication
+
+All data and replication materials are openly available:
+
+📦 **Harvard Dataverse**: [doi.org/10.7910/DVN/P4RJBC](https://doi.org/10.7910/DVN/P4RJBC)
+
+Conflict data sourced from the [UCDP Georeferenced Event Dataset](https://ucdp.uu.se/downloads/). Trade data from the [World Bank](https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS).
+
+## Citation
+
+```bibtex
+@article{gallea2021globalization,
+  title={Globalization mitigates the risk of conflict caused by strategic territory},
+  author={Gallea, Quentin and Rohner, Dominic},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={118},
+  number={39},
+  pages={e2105624118},
+  year={2021},
+  publisher={National Academy of Sciences}
+}
+```
+
+## How This Site Was Built
+
+This interactive website was built using **Claude Code** (Anthropic) as a demonstration of how AI tools can transform static academic papers into dynamic, explorable research experiences.
+
+**Stack**: Quarto · Observable JS · D3.js · GitHub Pages
+
+**Time to build**: ~20 minutes with Claude Code (Opus 4.6)
+
+→ Interested in building something like this for your own research? Learn more about the **Claude Code for Research** workshop.
