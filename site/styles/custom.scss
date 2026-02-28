@@ -168,6 +168,30 @@ $border-radius: 4px;
   font-weight: 600;
 }
 
+// Responsive table wrapper for mobile
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2rem 0;
+}
+
+.table-responsive .regression-table {
+  min-width: 580px;
+  margin: 0;
+}
+
+// Mobile adjustments
+@media (max-width: 600px) {
+  .regression-table {
+    font-size: 0.8rem;
+  }
+
+  .regression-table th,
+  .regression-table td {
+    padding: 0.4rem 0.5rem;
+  }
+}
+
 // Smooth scroll-triggered fade-in
 .fade-in {
   opacity: 0;

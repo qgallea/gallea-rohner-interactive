@@ -24,6 +24,35 @@ The research points toward three implications:
 
 **3. Deglobalization carries security risks.** If world trade openness declines — as some current trends suggest — the protective effect weakens, and strategic locations become more contested again.
 
+## Through the Lens of 2026
+
+The paper's data ends in 2018. But its framework is more relevant than ever.
+
+### Tariffs and the Return to the "Conflict Zone"
+
+The post-2018 world has moved sharply toward deglobalization. In 2025, the United States imposed sweeping tariffs — a 145% tariff on Chinese goods, a 25% tariff on imports from Canada and Mexico, and a baseline 10% tariff on most other countries. The [WTO's Global Trade Outlook (April 2025)](https://www.wto.org/english/news_e/pres25_e/pr756_e.htm) projects global merchandise trade volumes will decline by 0.2% in 2025, with North American trade growth dropping by 1.7 percentage points.
+
+The paper's framework makes a clear prediction here: falling trade openness pushes the world back below the 0.534 tipping point, into the "conflict zone" where proximity to choke points *increases* violence. If the current tariff escalation depresses global trade, the protective Montesquieu effect weakens — and strategic locations become more vulnerable.
+
+### The Red Sea Crisis: Bab el-Mandeb Under Fire
+
+Since November 2023, Houthi forces in Yemen have launched over 190 attacks on commercial shipping transiting the Bab el-Mandeb strait — one of the 12 choke points in our analysis. Traffic through the Suez Canal dropped by roughly 75%, forcing vessels to reroute around the Cape of Good Hope at an additional cost of approximately $1 million in fuel per voyage and 11,000 extra nautical miles. The [UNCTAD Global Trade Update (January 2026)](https://unctad.org/publication/global-trade-update-january-2026) estimates over $1 trillion in goods were disrupted.
+
+:::{.callout-warning}
+## A Test of the Framework
+The Houthi crisis both confirms and challenges the model. On one hand, it confirms the paper's core insight: conflict erupts at a strategically vital waterway, exactly as the framework predicts. On the other hand, major powers *did* intervene — the US-led Operation Prosperity Guardian and the EU's EUNAVFOR Aspides — yet attacks persisted. This illustrates an important nuance: the model predicts *incentives* to intervene when trade stakes are high, not guaranteed success. The collective action problem is real: intervention is costly and difficult to sustain.
+:::
+
+### Strait of Hormuz: A Live Flashpoint
+
+In February 2026, Iran conducted live fire naval drills and [briefly closed the Strait of Hormuz](https://www.thenationalnews.com/news/mena/2026/02/17/iran-hormuz-strait-closure/) on February 17, while joint Iran-Russia naval exercises took place at the port of Bandar Abbas. An estimated 20–30% of the world's daily oil consumption transits through Hormuz. The United States responded by boosting its naval presence in the region — exactly the Montesquieu mechanism at work: high trade stakes trigger major power intervention to keep the route open.
+
+This is the same dynamic illustrated by the France-Netherlands EMASOH (European Maritime Awareness in the Strait of Hormuz) mission, which has maintained frigate patrols since 2020. But rising US-Iran tensions also show that strategic territory remains a flashpoint, regardless of intervention.
+
+### What the Model Predicts Next
+
+If tariffs and deglobalization continue to depress world trade openness, the framework predicts a dangerous trajectory: a slide further below the tipping point, where the marginal effect of proximity turns positive and choke points become conflict magnets. The chart below shows historical trade openness — readers can judge for themselves how close we are to the edge.
+
 ## World Trade Openness Over Time
 
 ```{ojs}
@@ -171,3 +200,5 @@ tradeData = FileAttachment("data/trade_openness.json").json()
 ## Reading the chart
 Each dot represents one year of global trade openness. When trade is **above the tipping point** (0.534), proximity to choke points reduces conflict. When trade drops **below**, the protective effect vanishes. Notice how the 2008 financial crisis pushed trade back toward the danger zone.
 :::
+
+Learn more about the authors, cite the paper, or access the replication data. [Next: About](about.qmd)

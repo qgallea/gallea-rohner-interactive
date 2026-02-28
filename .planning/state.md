@@ -1,41 +1,50 @@
 # State — Gallea & Rohner Interactive Quarto Site
 
-**Last updated**: 2026-02-27 (initial setup)
-**Current phase**: Phase 0 complete → Ready for Phase 1
-**Blocking issues**: Need to download replication data from Harvard Dataverse
+**Last updated**: 2026-02-28
+**Current phase**: Phase 3 complete — Site deployed to GitHub Pages
+**Live URL**: https://qgallea.github.io/gallea-rohner-interactive/
 
 ## Progress
 
 | Phase | Status | Notes |
 |-------|--------|-------|
 | Phase 0: Setup | 🟢 Complete | Structure, config, skills, skeleton pages |
-| Phase 1: Data Foundation | 🔴 Not started | Need replication data |
-| Phase 2: Core Pages | 🟡 Partial | slider.qmd has OJS code (needs data) |
-| Phase 3: Polish & Deploy | 🔴 Not started | — |
+| Phase 1: Data Foundation | 🟢 Complete | 6 Python scripts, all JSON files generated |
+| Phase 2: Core Pages | 🟢 Complete | All 7 pages with OJS interactivity |
+| Phase 3: Deploy | 🟢 Complete | Git repo + GitHub Pages live |
 | Phase 4: Workshop Package | 🔴 Not started | — |
 
 ## Data Files Status
 
-| File | Status | Location |
-|------|--------|----------|
-| `chokepoints.json` | ❌ | `site/data/` |
-| `conflict_events.json` | ❌ | `site/data/` |
-| `trade_openness.json` | ❌ | `site/data/` |
-| `marginal_effects.json` | ❌ | `site/data/` |
-| `regional_panels.json` | ❌ | `site/data/` |
-| `world-110m.json` | ❌ | `site/data/` |
+| File | Status | Size | Location |
+|------|--------|------|----------|
+| `chokepoints.json` | 🟢 | 1.5 KB | `site/data/` |
+| `conflict_events.json` | 🟢 | 607 KB | `site/data/` |
+| `trade_openness.json` | 🟢 | 1.8 KB | `site/data/` |
+| `marginal_effects.json` | 🟢 | 49 KB | `site/data/` |
+| `regional_panels.json` | 🟢 | 158 KB | `site/data/` |
+| `world-110m.json` | 🟢 | 105 KB | `site/data/` |
 
 ## Page Status
 
 | Page | File | OJS | Data | Polish |
 |------|------|-----|------|--------|
-| Home | 🟢 `index.qmd` | N/A (static) | N/A | 🟡 |
-| Map | 🟢 `map.qmd` | 🔴 placeholder | ❌ needs data | 🔴 |
-| Mechanism | 🟢 `mechanism.qmd` | 🔴 text only | N/A | 🔴 |
-| **Slider** | 🟢 `slider.qmd` | 🟢 **full OJS** | hardcoded ✅ | 🟡 |
-| Evidence | 🟢 `evidence.qmd` | 🔴 placeholder | ❌ needs data | 🔴 |
-| Policy | 🟢 `policy.qmd` | 🔴 none | ❌ needs data | 🔴 |
-| About | 🟢 `about.qmd` | N/A (static) | N/A | 🟡 |
+| Home | 🟢 `index.qmd` | N/A (static) | N/A | 🟢 |
+| Map | 🟢 `map.qmd` | 🟢 D3 map + toggle | 🟢 3 JSON files | 🟢 |
+| Mechanism | 🟢 `mechanism.qmd` | 🟢 interactive diagram | N/A | 🟢 |
+| **Slider** | 🟢 `slider.qmd` | 🟢 **full OJS** | hardcoded | 🟢 |
+| Evidence | 🟢 `evidence.qmd` | 🟢 tables + comparison | hardcoded | 🟢 |
+| Policy | 🟢 `policy.qmd` | 🟢 trade timeline | 🟢 trade_openness.json | 🟢 |
+| About | 🟢 `about.qmd` | N/A (static) | N/A | 🟢 |
+
+## Key Variable Names (from globalization_data.dta)
+
+- `tradeworld` — world trade openness (NOT `tradew` as in do-file)
+- `near_dist` — log proximity to nearest choke point
+- `trade_lin` — interaction term (near_dist x tradeworld)
+- `conflict` — binary conflict indicator
+- `gid` — grid cell ID
+- `xcoord` / `ycoord` — longitude / latitude
 
 ## Decisions Made
 - Quarto + GitHub Pages (not single-file HTML)
@@ -44,10 +53,4 @@
 - Litera base theme + custom SCSS
 - Paper's blue/red color palette
 - One page per section (navbar navigation)
-
-## Next Steps
-1. Download replication data → `raw_data/replication_data/`
-2. Run `/process-data all` to generate JSON files
-3. Wire `slider.qmd` to real data (currently hardcoded — still correct)
-4. Build `map.qmd` with real conflict events
-5. `quarto preview` to test everything together
+- Trade openness median = 0.5177 (computed from data)

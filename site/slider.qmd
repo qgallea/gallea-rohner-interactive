@@ -49,7 +49,7 @@ htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; 
   &nbsp;·&nbsp;
   <strong>Marginal Effect</strong>: <span style="color: ${me > 0 ? '#e53935' : '#43a047'}; font-weight: 700;">${me > 0 ? '+' : ''}${me.toFixed(4)}</span>
   <br><br>
-  Being <strong>1,100 km closer</strong> to a maritime choke point (Paris → Rome)
+  Being <strong>1,100 km closer</strong> to a maritime choke point (roughly Paris → Rome, or New York → Chicago)
   ${me > 0
     ? htl.html`<span style="color: #e53935;"><strong>increases</strong></span> conflict risk by <strong>${pctBaseline.toFixed(1)}%</strong> relative to baseline.`
     : htl.html`<span style="color: #43a047;"><strong>decreases</strong></span> conflict risk by <strong>${Math.abs(pctBaseline).toFixed(1)}%</strong> relative to baseline.`
@@ -182,7 +182,7 @@ htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; 
       .attr("x", -height / 2).attr("y", -55)
       .attr("fill", "#555").attr("text-anchor", "middle")
       .attr("font-size", "13px")
-      .text("Marginal Effect of Proximity on Conflict"));
+      .text("Change in Conflict Risk per 1,100 km Closer"));
 
   return svg.node();
 }
@@ -192,5 +192,7 @@ htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; 
 
 :::{.callout-tip}
 ## How to read this chart
-The **blue line** shows how much conflict risk changes when a location moves 1,100 km closer to a maritime choke point (one standard deviation), at different levels of world trade openness. The **shaded bands** show 90% and 99% confidence intervals. The **purple dashed line** marks the tipping point where the effect crosses zero.
+The **blue line** shows how much conflict risk changes when a location moves 1,100 km closer to a maritime choke point (one standard deviation), at different levels of world trade openness. The **shaded bands** show 90% and 99% confidence intervals — if the band crosses the zero line, we cannot be statistically confident that proximity affects conflict at that trade level. The **purple dashed line** marks the tipping point where the effect crosses zero.
 :::
+
+Ready for the formal evidence behind these numbers? [Next: The Evidence](evidence.qmd)

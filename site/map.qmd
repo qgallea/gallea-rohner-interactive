@@ -101,7 +101,7 @@ htl.html`<div class="data-callout" style="max-width: 700px; margin: 0.5rem auto 
 
   // Conflict dots
   const maxEvents = d3.max(filteredConflicts, d => d.events) || 1;
-  svg.append("g")
+  const conflictDots = svg.append("g")
     .selectAll("circle")
     .data(filteredConflicts.sort((a, b) => b.events - a.events))
     .join("circle")
@@ -119,6 +119,9 @@ htl.html`<div class="data-callout" style="max-width: 700px; margin: 0.5rem auto 
     .attr("stroke", "#c62828")
     .attr("stroke-width", 0.3)
     .attr("stroke-opacity", 0.4);
+
+  conflictDots.append("title")
+    .text(d => `${d.events} conflict event${d.events > 1 ? 's' : ''} (${d.lat.toFixed(1)}°, ${d.lng.toFixed(1)}°)`);
 
   // Choke point markers
   const chokeG = svg.append("g")
@@ -143,6 +146,10 @@ htl.html`<div class="data-callout" style="max-width: 700px; margin: 0.5rem auto 
     .attr("r", 3)
     .attr("fill", "#ff9800")
     .attr("opacity", 0.9);
+
+  // Tooltip
+  chokeG.append("title")
+    .text(d => `${d.name} — ${d.context}`);
 
   // Labels
   chokeG.append("text")
@@ -200,3 +207,5 @@ htl.html`<div class="data-callout" style="max-width: 700px; margin: 0.5rem auto 
 ## What to look for
 In periods of **low trade openness**, conflict events cluster more densely near choke points. When trade is **booming**, this clustering weakens — major powers have stronger incentives to keep routes secure.
 :::
+
+The clustering you see is not coincidence — there is a game-theoretic mechanism that explains it. [Next: The Mechanism](mechanism.qmd)

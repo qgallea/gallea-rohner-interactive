@@ -4,6 +4,14 @@ project:
 
 website:
   title: "Globalization & Conflict"
+  open-graph:
+    title: "Globalization Mitigates the Risk of Conflict Caused by Strategic Territory"
+    description: "An interactive exploration of how trade openness shapes conflict near maritime choke points — based on Gallea & Rohner (PNAS, 2021)."
+    locale: en_US
+  twitter-card:
+    title: "Globalization Mitigates the Risk of Conflict Caused by Strategic Territory"
+    description: "Interactive research site: drag a slider and watch globalization flip from curse to cure for conflict near strategic waterways."
+    card-style: summary_large_image
   navbar:
     background: "#1a237e"
     foreground: "#ffffff"

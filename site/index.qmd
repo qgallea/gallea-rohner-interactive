@@ -54,8 +54,15 @@ Globalization makes strategic locations more valuable — and more worth fightin
 Trade creates mutual dependence — countries prefer cooperation to keep routes open. Economic integration *curbs* conflict.
 :::
 
-This research puts both views to the test. The answer? **It depends on how much trade is flowing.**
+This research puts both views to the test with 1.9 million observations across 30 years.
 
-> [Explore the map](map.qmd) to see where strategic choke points are and how conflict clusters around them.
+:::{.callout-important icon=false}
+## The Finding
+Being close to a maritime choke point **increases** conflict risk when global trade is low — but **decreases** it when trade is high enough. The tipping point occurs at a world trade openness of about 0.534 (share of GDP). Above that threshold, globalization protects strategic locations; below it, they become conflict magnets.
+:::
 
-> [Move the slider](slider.qmd) to discover the tipping point where globalization flips from curse to cure.
+**Explore the results yourself:**
+
+- [See the map](map.qmd) — where are the world's strategic choke points, and where does conflict cluster?
+- [Move the slider](slider.qmd) — discover the tipping point where globalization flips from curse to cure.
+- [Read the evidence](evidence.qmd) — the regression results behind the findings.

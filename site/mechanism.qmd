@@ -21,12 +21,19 @@ viewof tradeLevel = Inputs.range([0.35, 0.60], {
 //| echo: false
 
 {
-  const width = 700;
+  const width = 680;
   const height = 400;
   const isLow = tradeLevel < 0.534;
 
   // Normalized position of trade on [0, 1]
   const t = (tradeLevel - 0.35) / (0.60 - 0.35);
+
+  // Responsive coordinates as fractions of width/height
+  const cx = width / 2;      // center x = 340
+  const topY = 60;
+  const midY = 200;
+  const botY = 340;
+  const spread = width * 0.26; // horizontal spread from center
 
   const svg = d3.create("svg")
     .attr("viewBox", [0, 0, width, height])
@@ -41,54 +48,79 @@ viewof tradeLevel = Inputs.range([0.35, 0.60], {
 
   // --- NODES ---
   const nodes = [
-    {id: "strategic", label: "Strategic Value", sublabel: "of location near choke point", x: 350, y: 60, color: "#ff9800"},
-    {id: "incentive", label: "Incentive to Fight", sublabel: "local actors contest territory", x: 170, y: 200, color: isLow ? "#e53935" : "#66bb6a"},
-    {id: "intervention", label: "Major Power Intervention", sublabel: "protect trade routes", x: 530, y: 200, color: "#42a5f5"},
-    {id: "conflict", label: isLow ? "MORE Conflict" : "LESS Conflict", sublabel: "near choke points", x: 350, y: 340, color: isLow ? "#c62828" : "#2e7d32"},
+    {id: "strategic", label: "Strategic Value", sublabel: "of location near choke point", x: cx, y: topY, color: "#ff9800"},
+    {id: "incentive", label: "Incentive to Fight", sublabel: "local actors contest territory", x: cx - spread, y: midY, color: isLow ? "#e53935" : "#66bb6a"},
+    {id: "intervention", label: "Major Power Intervention", sublabel: "protect trade routes", x: cx + spread, y: midY, color: "#42a5f5"},
+    {id: "conflict", label: isLow ? "MORE Conflict" : "LESS Conflict", sublabel: "near choke points", x: cx, y: botY, color: isLow ? "#c62828" : "#2e7d32"},
   ];
 
   // --- ARROWS ---
   // Strategic -> Incentive
   svg.append("line")
-    .attr("x1", 290).attr("y1", 90).attr("x2", 210).attr("y2", 175)
+    .attr("x1", cx - 60).attr("y1", topY + 30).attr("x2", cx - spread + 40).attr("y2", midY - 25)
     .attr("stroke", "#e53935").attr("stroke-width", 2 + (1 - t) * 3)
     .attr("marker-end", "url(#arrow-red)");
 
+  // Arrow label: fuels conflict
+  svg.append("text")
+    .attr("x", cx - spread + 10).attr("y", topY + 55)
+    .attr("text-anchor", "middle").attr("fill", "#e53935")
+    .attr("font-size", "9px").attr("font-style", "italic")
+    .attr("opacity", 0.5 + (1 - t) * 0.5)
+    .text("fuels conflict");
+
   // Strategic -> Intervention
   svg.append("line")
-    .attr("x1", 410).attr("y1", 90).attr("x2", 490).attr("y2", 175)
+    .attr("x1", cx + 60).attr("y1", topY + 30).attr("x2", cx + spread - 40).attr("y2", midY - 25)
     .attr("stroke", "#42a5f5").attr("stroke-width", 1 + t * 4)
     .attr("marker-end", "url(#arrow-blue)");
 
+  // Arrow label: triggers intervention
+  svg.append("text")
+    .attr("x", cx + spread - 10).attr("y", topY + 55)
+    .attr("text-anchor", "middle").attr("fill", "#42a5f5")
+    .attr("font-size", "9px").attr("font-style", "italic")
+    .attr("opacity", 0.3 + t * 0.7)
+    .text("triggers response");
+
   // Incentive -> Conflict
   svg.append("line")
-    .attr("x1", 210).attr("y1", 230).attr("x2", 310).attr("y2", 315)
+    .attr("x1", cx - spread + 40).attr("y1", midY + 25).attr("x2", cx - 40).attr("y2", botY - 25)
     .attr("stroke", "#e53935").attr("stroke-width", 2 + (1 - t) * 3)
     .attr("stroke-opacity", 0.4 + (1 - t) * 0.6)
     .attr("marker-end", "url(#arrow-red)");
 
   // Intervention -> Conflict (suppressive)
   svg.append("line")
-    .attr("x1", 490).attr("y1", 230).attr("x2", 390).attr("y2", 315)
+    .attr("x1", cx + spread - 40).attr("y1", midY + 25).attr("x2", cx + 40).attr("y2", botY - 25)
     .attr("stroke", "#42a5f5").attr("stroke-width", 1 + t * 4)
     .attr("stroke-opacity", 0.3 + t * 0.7)
     .attr("marker-end", "url(#arrow-blue)");
 
-  // Trade openness -> Intervention (moderating arrow)
+  // Arrow label: suppresses conflict
   svg.append("text")
-    .attr("x", 610).attr("y", 125)
+    .attr("x", cx + spread - 10).attr("y", midY + 65)
+    .attr("text-anchor", "middle").attr("fill", "#42a5f5")
+    .attr("font-size", "9px").attr("font-style", "italic")
+    .attr("opacity", 0.3 + t * 0.7)
+    .text("suppresses conflict");
+
+  // Trade openness -> Intervention (moderating arrow)
+  const tradeX = Math.min(width - 40, cx + spread + 80);
+  svg.append("text")
+    .attr("x", tradeX).attr("y", 125)
     .attr("text-anchor", "middle").attr("fill", "#1a237e")
     .attr("font-size", "11px").attr("font-weight", "700")
     .text("Trade Openness");
 
   svg.append("text")
-    .attr("x", 610).attr("y", 142)
+    .attr("x", tradeX).attr("y", 142)
     .attr("text-anchor", "middle").attr("fill", "#555")
     .attr("font-size", "10px")
     .text(`= ${tradeLevel.toFixed(2)}`);
 
   svg.append("line")
-    .attr("x1", 590).attr("y1", 150).attr("x2", 555).attr("y2", 185)
+    .attr("x1", tradeX - 20).attr("y1", 150).attr("x2", cx + spread + 15).attr("y2", midY - 15)
     .attr("stroke", "#1a237e").attr("stroke-width", 1.5 + t * 2)
     .attr("stroke-dasharray", "4,3")
     .attr("marker-end", "url(#arrow-navy)");
@@ -166,4 +198,4 @@ viewof tradeLevel = Inputs.range([0.35, 0.60], {
 In early 2020, France and the Netherlands deployed frigates to the Strait of Hormuz specifically to protect commercial shipping — a direct illustration of major powers intervening when trade stakes are high.
 :::
 
-> [Test this yourself](slider.qmd) — move the trade openness slider and watch the marginal effect flip sign.
+Now that you've seen the mechanism, explore the quantitative evidence yourself — drag a slider and watch the marginal effect flip sign. [Next: Explore the Effect](slider.qmd)

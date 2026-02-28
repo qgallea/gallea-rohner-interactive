@@ -16,10 +16,11 @@ Areas closer to maritime choke points face significantly higher conflict risk â€
 - **Any Event**: Any type of armed conflict
 - **State-based**: Fighting involving a government (e.g., civil wars, interstate wars)
 - **Non-state**: Fighting between non-government armed groups (e.g., militias, rebel factions)
-- **One-sided**: Violence by an organized group against civilians
-- **ln(deaths+1)**: Logged death count â€” captures conflict *intensity*, not just occurrence
+- **One-sided**: Violence deliberately targeting civilians (by a government or armed group)
+- **ln(deaths+1)**: Death count on a logarithmic scale â€” prevents a single massive battle from dominating the results, capturing overall *intensity*
 :::
 
+<div class="table-responsive">
 <table class="regression-table">
   <thead>
     <tr>
@@ -49,7 +50,7 @@ Areas closer to maritime choke points face significantly higher conflict risk â€
       <td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td>
     </tr>
     <tr style="color:#999; font-size:0.9em; border-top: 2px solid #ddd;">
-      <td style="text-align:left;">Mean dep. var.</td>
+      <td style="text-align:left;">Avg. conflict rate</td>
       <td>0.015</td><td>0.007</td><td>0.002</td><td>0.006</td><td>0.035</td>
     </tr>
     <tr style="color:#999; font-size:0.9em;">
@@ -58,6 +59,7 @@ Areas closer to maritime choke points face significantly higher conflict risk â€
     </tr>
   </tbody>
 </table>
+</div>
 
 :::{.callout-note}
 ## Reading the table
@@ -68,6 +70,7 @@ Each column uses a different measure of conflict. The coefficient in the highlig
 
 The key result: proximity increases conflict when trade is low, but the interaction term flips the sign when trade is high.
 
+<div class="table-responsive">
 <table class="regression-table">
   <thead>
     <tr>
@@ -109,7 +112,7 @@ The key result: proximity increases conflict when trade is low, but the interact
       <td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td>
     </tr>
     <tr style="color:#999; font-size:0.9em; border-top: 2px solid #ddd;">
-      <td style="text-align:left;">Mean dep. var.</td>
+      <td style="text-align:left;">Avg. conflict rate</td>
       <td>0.015</td><td>0.007</td><td>0.002</td><td>0.006</td><td>0.035</td>
     </tr>
     <tr style="color:#999; font-size:0.9em;">
@@ -118,6 +121,7 @@ The key result: proximity increases conflict when trade is low, but the interact
     </tr>
   </tbody>
 </table>
+</div>
 
 **In plain English:** Column 1 shows that being near a choke point increases conflict risk (positive coefficient), but this effect shrinks â€” and eventually reverses â€” as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.
 
@@ -174,4 +178,4 @@ The key result: proximity increases conflict when trade is low, but the interact
 
 The paper includes extensive robustness checks documented in the SI Appendix: cell fixed effects (controlling for all time-invariant local characteristics), alternative choke point definitions (excluding man-made canals), nonlinear specifications (tercile and quartile regressions), alternative conflict data sources (GDELT), and alternative standard error clustering.
 
-> [Play with the slider](slider.qmd) to see these coefficients in action.
+What do these findings mean for the real world â€” and for policy? [Next: Policy Implications](policy.qmd)
