@@ -205,7 +205,7 @@ htl.html`<div class="data-callout" style="max-width: 700px; margin: 0.5rem auto 
 
 :::{.callout-tip}
 ## What to look for
-In periods of **low trade openness**, conflict events cluster more densely near choke points. When trade is **booming**, this clustering weakens — major powers have stronger incentives to keep routes secure.
+In periods of **low trade openness**, conflict events cluster more densely near choke points. When trade is **booming**, this clustering weakens — consistent with the idea that major powers have stronger incentives to keep routes secure.
 :::
 
-The clustering you see is not coincidence — there is a game-theoretic mechanism that explains it. [Next: The Mechanism](mechanism.qmd)
+The paper proposes a game-theoretic mechanism that may explain this clustering. [Next: The Mechanism](mechanism.qmd)

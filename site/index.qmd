@@ -58,7 +58,7 @@ This research puts both views to the test with 1.9 million observations across 3
 
 :::{.callout-important icon=false}
 ## The Finding
-Being close to a maritime choke point **increases** conflict risk when global trade is low — but **decreases** it when trade is high enough. The tipping point occurs at a world trade openness of about 0.534 (share of GDP). Above that threshold, globalization protects strategic locations; below it, they become conflict magnets.
+Being close to a maritime choke point — compared to locations farther away — is **associated with higher** conflict risk when global trade is low, but the association **reverses** when trade is high enough. The tipping point occurs at a world trade openness of about 0.534 (share of GDP). This is not about whether there is more or less conflict globally — it is about **where** conflict concentrates. When trade is high, major powers appear to intervene to keep strategic waterways secure, and the conflict premium near choke points disappears.
 :::
 
 **Explore the results yourself:**

@@ -9,7 +9,7 @@ The analysis uses a panel of 64,818 grid cells (55 x 55 km each) covering the en
 
 ### Table 1: Proximity and Conflict (Baseline)
 
-Areas closer to maritime choke points face significantly higher conflict risk — across all types of violence.
+Areas closer to maritime choke points are associated with significantly higher conflict risk — across all types of violence.
 
 :::{.callout-tip collapse="true"}
 ## What do the column headers mean?
@@ -68,7 +68,7 @@ Each column uses a different measure of conflict. The coefficient in the highlig
 
 ### Table 2: The Interaction — Proximity x Trade Openness
 
-The key result: proximity increases conflict when trade is low, but the interaction term flips the sign when trade is high.
+The key result: proximity is associated with more conflict when trade is low, but the interaction term flips the sign when trade is high.
 
 <div class="table-responsive">
 <table class="regression-table">
@@ -123,7 +123,7 @@ The key result: proximity increases conflict when trade is low, but the interact
 </table>
 </div>
 
-**In plain English:** Column 1 shows that being near a choke point increases conflict risk (positive coefficient), but this effect shrinks — and eventually reverses — as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.
+**In plain English:** Column 1 shows that being near a choke point is associated with higher conflict risk (positive coefficient), but this estimated effect shrinks — and eventually reverses — as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.
 
 ### The "Two Worlds" Comparison
 
@@ -153,7 +153,7 @@ The key result: proximity increases conflict when trade is low, but the interact
         ME = ${meLow > 0 ? '+' : ''}${meLow.toFixed(4)}
       </div>
       <div style="font-size: 0.95rem;">
-        Being 1,100 km closer to a strait <strong style="color: #c62828;">increases</strong> conflict risk by <strong>${pctLow}%</strong> of baseline
+        Being 1,100 km closer to a strait is associated with <strong style="color: #c62828;">${pctLow}% higher</strong> conflict risk (relative to baseline)
       </div>
     </div>
     <div style="flex: 1; min-width: 280px; background: #e8f5e9; border-radius: 8px; padding: 1.5rem;">
@@ -167,7 +167,7 @@ The key result: proximity increases conflict when trade is low, but the interact
         ME = ${meHigh.toFixed(4)}
       </div>
       <div style="font-size: 0.95rem;">
-        Being 1,100 km closer to a strait <strong style="color: #2e7d32;">decreases</strong> conflict risk by <strong>${Math.abs(pctHigh)}%</strong> of baseline
+        Being 1,100 km closer to a strait is associated with <strong style="color: #2e7d32;">${Math.abs(pctHigh)}% lower</strong> conflict risk (relative to baseline)
       </div>
     </div>
   </div>`;
@@ -177,5 +177,10 @@ The key result: proximity increases conflict when trade is low, but the interact
 ### Robustness
 
 The paper includes extensive robustness checks documented in the SI Appendix: cell fixed effects (controlling for all time-invariant local characteristics), alternative choke point definitions (excluding man-made canals), nonlinear specifications (tercile and quartile regressions), alternative conflict data sources (GDELT), and alternative standard error clustering.
+
+:::{.callout-note}
+## A note on causality
+The paper uses latitude, country, and year fixed effects, clustered standard errors, and extensive robustness checks (cell FE, alternative definitions, alternative data sources) to address confounding. The theoretical model provides a game-theoretic foundation for the empirical patterns. However, as with any observational study, these estimates reflect strong and robust associations — not definitive proof of causality. The results are consistent with the proposed mechanism, but alternative explanations cannot be fully ruled out.
+:::
 
 What do these findings mean for the real world — and for policy? [Next: Policy Implications](policy.qmd)

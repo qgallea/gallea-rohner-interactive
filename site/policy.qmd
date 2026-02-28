@@ -5,7 +5,7 @@ description: "Why global security coordination is a public good — and why we'r
 
 ## The Collective Action Problem
 
-The findings reveal an uncomfortable truth: peace near strategic waterways is currently a **byproduct of self-interest**, not coordinated policy.
+The findings point to an uncomfortable possibility: peace near strategic waterways may be partly a **byproduct of self-interest**, not coordinated policy.
 
 When trade is booming, major powers protect choke points because it serves their economic interests. But this protection is unreliable — it depends on trade volumes and the self-interest calculus of a few powerful nations.
 
@@ -20,7 +20,7 @@ The research points toward three implications:
 
 **1. Supranational coordination matters.** Relying on major powers' self-interest is insufficient. Organizations like the United Nations should play a larger role in guaranteeing safe maritime passage — especially during periods of low trade.
 
-**2. Trade agreements are security agreements.** The data shows that trade openness itself reduces conflict in strategic locations. Trade policy and security policy are more intertwined than commonly assumed.
+**2. Trade agreements are security agreements.** The estimates suggest that higher trade openness is associated with less conflict in strategic locations. Trade policy and security policy are more intertwined than commonly assumed.
 
 **3. Deglobalization carries security risks.** If world trade openness declines — as some current trends suggest — the protective effect weakens, and strategic locations become more contested again.
 
@@ -32,7 +32,7 @@ The paper's data ends in 2018. But its framework is more relevant than ever.
 
 The post-2018 world has moved sharply toward deglobalization. In 2025, the United States imposed sweeping tariffs — a 145% tariff on Chinese goods, a 25% tariff on imports from Canada and Mexico, and a baseline 10% tariff on most other countries. The [WTO's Global Trade Outlook (April 2025)](https://www.wto.org/english/news_e/pres25_e/pr756_e.htm) projects global merchandise trade volumes will decline by 0.2% in 2025, with North American trade growth dropping by 1.7 percentage points.
 
-The paper's framework makes a clear prediction here: falling trade openness pushes the world back below the 0.534 tipping point, into the "conflict zone" where proximity to choke points *increases* violence. If the current tariff escalation depresses global trade, the protective Montesquieu effect weakens — and strategic locations become more vulnerable.
+The paper's framework suggests that falling trade openness would push the world back below the 0.534 tipping point, into the zone where proximity to choke points is associated with *more* violence. If the current tariff escalation depresses global trade, the estimated protective effect weakens — and strategic locations may become more vulnerable.
 
 ### The Red Sea Crisis: Bab el-Mandeb Under Fire
 
@@ -45,7 +45,7 @@ The Houthi crisis both confirms and challenges the model. On one hand, it confir
 
 ### Strait of Hormuz: A Live Flashpoint
 
-In February 2026, Iran conducted live fire naval drills and [briefly closed the Strait of Hormuz](https://www.thenationalnews.com/news/mena/2026/02/17/iran-hormuz-strait-closure/) on February 17, while joint Iran-Russia naval exercises took place at the port of Bandar Abbas. An estimated 20–30% of the world's daily oil consumption transits through Hormuz. The United States responded by boosting its naval presence in the region — exactly the Montesquieu mechanism at work: high trade stakes trigger major power intervention to keep the route open.
+In February 2026, Iran conducted live fire naval drills and [briefly closed the Strait of Hormuz](https://www.thenationalnews.com/news/mena/2026/02/17/iran-hormuz-strait-closure/) on February 17, while joint Iran-Russia naval exercises took place at the port of Bandar Abbas. An estimated 20–30% of the world's daily oil consumption transits through Hormuz. The United States responded by boosting its naval presence in the region — consistent with the Montesquieu mechanism: high trade stakes are associated with major power intervention to keep the route open.
 
 This is the same dynamic illustrated by the France-Netherlands EMASOH (European Maritime Awareness in the Strait of Hormuz) mission, which has maintained frigate patrols since 2020. But rising US-Iran tensions also show that strategic territory remains a flashpoint, regardless of intervention.
 
@@ -198,7 +198,7 @@ tradeData = FileAttachment("data/trade_openness.json").json()
 
 :::{.callout-tip}
 ## Reading the chart
-Each dot represents one year of global trade openness. When trade is **above the tipping point** (0.534), proximity to choke points reduces conflict. When trade drops **below**, the protective effect vanishes. Notice how the 2008 financial crisis pushed trade back toward the danger zone.
+Each dot represents one year of global trade openness. When trade is **above the tipping point** (0.534), the conflict premium near choke points disappears — proximity is no longer associated with higher violence. When trade drops **below**, locations near choke points are associated with disproportionately more conflict. Notice how the 2008 financial crisis pushed trade back toward the danger zone.
 :::
 
 Learn more about the authors, cite the paper, or access the replication data. [Next: About](about.qmd)

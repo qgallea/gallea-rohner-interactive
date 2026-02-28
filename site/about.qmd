@@ -13,9 +13,10 @@ DOI: [10.1073/pnas.2105624118](https://doi.org/10.1073/pnas.2105624118)
 
 ## Authors
 
-**Quentin Gallea** — Lecturer in Econometrics & Causal Inference, EPFL & University of Lausanne. Author of *The Causal Mindset Handbook* (Packt, 2026). Specialist in making causal inference accessible to researchers, executives, and the public.
+**Quentin Gallea** — Founder ([The Causal Mindset](https://thecausalmindset.com)), Senior Advisor (Enlighten Advisory), Lecturer (EPFL, University of Neuchatel, University of Lausanne, Graduate Institute, ISM, UniDistance, UZH). Author of [*The Causal Mindset Handbook*](https://thecausalmindset.com/book) (Packt, 2026).
+Join his workshop **Claude Code for Researchers**: [thecausalmindset.com/training](https://thecausalmindset.com/training)
 
-**Dominic Rohner** — Professor, Department of Economics, HEC Lausanne, University of Lausanne. Centre for Economic Policy Research (CEPR), London. Supported by ERC Starting Grant POLICIES FOR PEACE-677 595.
+**Dominic Rohner** — Professor, Department of Economics, HEC Lausanne, University of Lausanne. Centre for Economic Policy Research (CEPR). Author of [*The Peace Formula: Voice, Work and Warranties, Not Violence*](https://www.cambridge.org/core/books/peace-formula/6A61211F749D3AFA2FFCC38B37552407).
 
 ## Data & Replication
 

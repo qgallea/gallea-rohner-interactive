@@ -11,9 +11,9 @@ $$
 \text{Marginal Effect of Proximity} = \underbrace{0.0148}_{\beta_1 > 0} + \underbrace{(-0.0277)}_{\beta_2 < 0} \times \text{Trade Openness}
 $$
 
-In words: being near a choke point pushes conflict risk *up* (the positive term), but higher trade openness pushes it back *down* (the negative term). The question is which force wins.
+This measures **relative** conflict risk: how much more (or less) conflict occurs near a choke point *compared to locations farther away*. Being near a choke point is associated with *higher* conflict risk (the positive term), but higher trade openness is associated with a *smaller* — and eventually reversed — effect (the negative term).
 
-When trade openness is **low**, the marginal effect is **positive** — being near a choke point means more conflict. When trade openness is **high** enough, the effect **flips negative** — globalization protects strategic locations.
+When trade openness is **low**, the marginal effect is **positive** — locations near choke points experience more conflict than those farther away. When trade openness is **high** enough, the effect **flips negative** — the conflict premium near choke points disappears and reverses. This does not mean less conflict globally — it means conflict is no longer disproportionately concentrated at strategic waterways.
 
 **Move the slider to find the tipping point.**
 
@@ -52,8 +52,8 @@ htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; 
   <br><br>
   Being <strong>1,100 km closer</strong> to a maritime choke point (roughly Paris → Rome, or New York → Chicago)
   ${me > 0
-    ? htl.html`<span style="color: #e53935;"><strong>increases</strong></span> conflict risk by <strong>${pctBaseline.toFixed(1)}%</strong> relative to baseline.`
-    : htl.html`<span style="color: #43a047;"><strong>decreases</strong></span> conflict risk by <strong>${Math.abs(pctBaseline).toFixed(1)}%</strong> relative to baseline.`
+    ? htl.html`is associated with <span style="color: #e53935;"><strong>higher</strong></span> conflict risk — <strong>${pctBaseline.toFixed(1)}%</strong> of baseline.`
+    : htl.html`is associated with <span style="color: #43a047;"><strong>lower</strong></span> conflict risk — <strong>${Math.abs(pctBaseline).toFixed(1)}%</strong> of baseline.`
   }
   ${Math.abs(tradeOpenness - crossover) < 0.005
     ? htl.html`<br><br><span style="color: #7e57c2; font-weight: 600;">⚡ You've found the tipping point! At trade ≈ ${crossover.toFixed(3)}, proximity to a choke point has no additional effect on conflict — risk is the same near and far.</span>`
@@ -194,6 +194,11 @@ htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; 
 :::{.callout-tip}
 ## How to read this chart
 The **blue line** shows how much conflict risk changes when a location moves 1,100 km closer to a maritime choke point (one standard deviation), at different levels of world trade openness. The **shaded bands** show 90% and 99% confidence intervals — if the band crosses the zero line, we cannot be statistically confident that proximity affects conflict at that trade level. The **purple dashed line** marks the tipping point where the effect crosses zero.
+:::
+
+:::{.callout-note}
+## What this measures — and what it doesn't
+This chart shows the **relative** effect of proximity: how much more (or less) conflict risk a location has *because* it is near a choke point, compared to otherwise similar locations farther away. It does **not** measure whether globalization reduces total conflict worldwide. The paper's finding is about the **geography** of conflict — where it concentrates — not about whether there is more or less conflict overall.
 :::
 
 Ready for the formal evidence behind these numbers? [Next: The Evidence](evidence.qmd)
