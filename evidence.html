@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The analysis uses a panel of 64,818 grid cells (55 x 55 km each) covering the entire globe from 1989 to 2018.</p>
 <section id="table-1-proximity-and-conflict-baseline" class="level3">
 <h3 class="anchored" data-anchor-id="table-1-proximity-and-conflict-baseline">Table 1: Proximity and Conflict (Baseline)</h3>
-<p>Areas closer to maritime choke points face significantly higher conflict risk — across all types of violence.</p>
+<p>Areas closer to maritime choke points are associated with significantly higher conflict risk — across all types of violence.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -369,7 +369,7 @@ Observations
 </section>
 <section id="table-2-the-interaction-proximity-x-trade-openness" class="level3">
 <h3 class="anchored" data-anchor-id="table-2-the-interaction-proximity-x-trade-openness">Table 2: The Interaction — Proximity x Trade Openness</h3>
-<p>The key result: proximity increases conflict when trade is low, but the interaction term flips the sign when trade is high.</p>
+<p>The key result: proximity is associated with more conflict when trade is low, but the interaction term flips the sign when trade is high.</p>
 <div class="table-responsive">
 <table class="regression-table">
 <thead>
@@ -525,7 +525,7 @@ Observations
 </tbody>
 </table>
 </div>
-<p><strong>In plain English:</strong> Column 1 shows that being near a choke point increases conflict risk (positive coefficient), but this effect shrinks — and eventually reverses — as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.</p>
+<p><strong>In plain English:</strong> Column 1 shows that being near a choke point is associated with higher conflict risk (positive coefficient), but this estimated effect shrinks — and eventually reverses — as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.</p>
 </section>
 <section id="the-two-worlds-comparison" class="level3">
 <h3 class="anchored" data-anchor-id="the-two-worlds-comparison">The “Two Worlds” Comparison</h3>
@@ -555,7 +555,7 @@ Observations
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="vs">        ME = </span><span class="sc">${</span>meLow <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">'+'</span> <span class="op">:</span> <span class="st">''</span><span class="sc">}${</span>meLow<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span></span>
 <span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
 <span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-size: 0.95rem;"&gt;</span></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait &lt;strong style="color: #c62828;"&gt;increases&lt;/strong&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span>pctLow<span class="sc">}</span><span class="vs">%&lt;/strong&gt; of baseline</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait is associated with &lt;strong style="color: #c62828;"&gt;</span><span class="sc">${</span>pctLow<span class="sc">}</span><span class="vs">% higher&lt;/strong&gt; conflict risk (relative to baseline)</span></span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="flex: 1; min-width: 280px; background: #e8f5e9; border-radius: 8px; padding: 1.5rem;"&gt;</span></span>
@@ -569,7 +569,7 @@ Observations
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="vs">        ME = </span><span class="sc">${</span>meHigh<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span></span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="font-size: 0.95rem;"&gt;</span></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait &lt;strong style="color: #2e7d32;"&gt;decreases&lt;/strong&gt; conflict risk by &lt;strong&gt;</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(pctHigh)<span class="sc">}</span><span class="vs">%&lt;/strong&gt; of baseline</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="vs">        Being 1,100 km closer to a strait is associated with &lt;strong style="color: #2e7d32;"&gt;</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(pctHigh)<span class="sc">}</span><span class="vs">% lower&lt;/strong&gt; conflict risk (relative to baseline)</span></span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span><span class="op">;</span></span>
@@ -585,6 +585,19 @@ Observations
 <section id="robustness" class="level3">
 <h3 class="anchored" data-anchor-id="robustness">Robustness</h3>
 <p>The paper includes extensive robustness checks documented in the SI Appendix: cell fixed effects (controlling for all time-invariant local characteristics), alternative choke point definitions (excluding man-made canals), nonlinear specifications (tercile and quartile regressions), alternative conflict data sources (GDELT), and alternative standard error clustering.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A note on causality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The paper uses latitude, country, and year fixed effects, clustered standard errors, and extensive robustness checks (cell FE, alternative definitions, alternative data sources) to address confounding. The theoretical model provides a game-theoretic foundation for the empirical patterns. However, as with any observational study, these estimates reflect strong and robust associations — not definitive proof of causality. The results are consistent with the proposed mechanism, but alternative explanations cannot be fully ruled out.</p>
+</div>
+</div>
 <p>What do these findings mean for the real world — and for policy? <a href="./policy.html">Next: Policy Implications</a></p>
 
 
@@ -593,7 +606,7 @@ Observations
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG57XHJcbiAgY29uc3QgYmV0YTEgPSAwLjAxNDg7XHJcbiAgY29uc3QgYmV0YTIgPSAtMC4wMjc3O1xyXG4gIGNvbnN0IGJhc2VsaW5lID0gMC4wMTU7XHJcblxyXG4gIGNvbnN0IG1lTG93ID0gYmV0YTEgKyBiZXRhMiAqIDAuNDA7XHJcbiAgY29uc3QgbWVIaWdoID0gYmV0YTEgKyBiZXRhMiAqIDAuNjA7XHJcbiAgY29uc3QgcGN0TG93ID0gKG1lTG93IC8gYmFzZWxpbmUgKiAxMDApLnRvRml4ZWQoMSk7XHJcbiAgY29uc3QgcGN0SGlnaCA9IChtZUhpZ2ggLyBiYXNlbGluZSAqIDEwMCkudG9GaXhlZCgxKTtcclxuXHJcbiAgcmV0dXJuIGh0bC5odG1sYFxyXG4gIDxkaXYgc3R5bGU9XCJkaXNwbGF5OiBmbGV4OyBnYXA6IDJyZW07IGZsZXgtd3JhcDogd3JhcDsgbWFyZ2luOiAycmVtIDA7XCI+XHJcbiAgICA8ZGl2IHN0eWxlPVwiZmxleDogMTsgbWluLXdpZHRoOiAyODBweDsgYmFja2dyb3VuZDogI2ZmZWJlZTsgYm9yZGVyLXJhZGl1czogOHB4OyBwYWRkaW5nOiAxLjVyZW07XCI+XHJcbiAgICAgIDxkaXYgc3R5bGU9XCJmb250LXdlaWdodDogNzAwOyBjb2xvcjogI2M2MjgyODsgZm9udC1zaXplOiAxLjFyZW07IG1hcmdpbi1ib3R0b206IDAuNXJlbTtcIj5cclxuICAgICAgICBXb3JsZCAxOiBMb3cgR2xvYmFsaXphdGlvblxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPGRpdiBzdHlsZT1cImNvbG9yOiAjNTU1OyBmb250LXNpemU6IDAuOTVyZW07XCI+XHJcbiAgICAgICAgVHJhZGUgb3Blbm5lc3MgPSAwLjQwIChlYXJseSAxOTkwcylcclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgc3R5bGU9XCJmb250LWZhbWlseTogJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlOyBmb250LXNpemU6IDEuM3JlbTsgY29sb3I6ICNjNjI4Mjg7IG1hcmdpbjogMXJlbSAwO1wiPlxyXG4gICAgICAgIE1FID0gJHttZUxvdyA+IDAgPyAnKycgOiAnJ30ke21lTG93LnRvRml4ZWQoNCl9XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IHN0eWxlPVwiZm9udC1zaXplOiAwLjk1cmVtO1wiPlxyXG4gICAgICAgIEJlaW5nIDEsMTAwIGttIGNsb3NlciB0byBhIHN0cmFpdCA8c3Ryb25nIHN0eWxlPVwiY29sb3I6ICNjNjI4Mjg7XCI+aW5jcmVhc2VzPC9zdHJvbmc+IGNvbmZsaWN0IHJpc2sgYnkgPHN0cm9uZz4ke3BjdExvd30lPC9zdHJvbmc+IG9mIGJhc2VsaW5lXHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC9kaXY+XHJcbiAgICA8ZGl2IHN0eWxlPVwiZmxleDogMTsgbWluLXdpZHRoOiAyODBweDsgYmFja2dyb3VuZDogI2U4ZjVlOTsgYm9yZGVyLXJhZGl1czogOHB4OyBwYWRkaW5nOiAxLjVyZW07XCI+XHJcbiAgICAgIDxkaXYgc3R5bGU9XCJmb250LXdlaWdodDogNzAwOyBjb2xvcjogIzJlN2QzMjsgZm9udC1zaXplOiAxLjFyZW07IG1hcmdpbi1ib3R0b206IDAuNXJlbTtcIj5cclxuICAgICAgICBXb3JsZCAyOiBIaWdoIEdsb2JhbGl6YXRpb25cclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgc3R5bGU9XCJjb2xvcjogIzU1NTsgZm9udC1zaXplOiAwLjk1cmVtO1wiPlxyXG4gICAgICAgIFRyYWRlIG9wZW5uZXNzID0gMC42MCAobWlkLTIwMDBzIHBlYWspXHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IHN0eWxlPVwiZm9udC1mYW1pbHk6ICdKZXRCcmFpbnMgTW9ubycsIG1vbm9zcGFjZTsgZm9udC1zaXplOiAxLjNyZW07IGNvbG9yOiAjMmU3ZDMyOyBtYXJnaW46IDFyZW0gMDtcIj5cclxuICAgICAgICBNRSA9ICR7bWVIaWdoLnRvRml4ZWQoNCl9XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IHN0eWxlPVwiZm9udC1zaXplOiAwLjk1cmVtO1wiPlxyXG4gICAgICAgIEJlaW5nIDEsMTAwIGttIGNsb3NlciB0byBhIHN0cmFpdCA8c3Ryb25nIHN0eWxlPVwiY29sb3I6ICMyZTdkMzI7XCI+ZGVjcmVhc2VzPC9zdHJvbmc+IGNvbmZsaWN0IHJpc2sgYnkgPHN0cm9uZz4ke01hdGguYWJzKHBjdEhpZ2gpfSU8L3N0cm9uZz4gb2YgYmFzZWxpbmVcclxuICAgICAgPC9kaXY+XHJcbiAgICA8L2Rpdj5cclxuICA8L2Rpdj5gO1xyXG59XHJcbiJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG57XHJcbiAgY29uc3QgYmV0YTEgPSAwLjAxNDg7XHJcbiAgY29uc3QgYmV0YTIgPSAtMC4wMjc3O1xyXG4gIGNvbnN0IGJhc2VsaW5lID0gMC4wMTU7XHJcblxyXG4gIGNvbnN0IG1lTG93ID0gYmV0YTEgKyBiZXRhMiAqIDAuNDA7XHJcbiAgY29uc3QgbWVIaWdoID0gYmV0YTEgKyBiZXRhMiAqIDAuNjA7XHJcbiAgY29uc3QgcGN0TG93ID0gKG1lTG93IC8gYmFzZWxpbmUgKiAxMDApLnRvRml4ZWQoMSk7XHJcbiAgY29uc3QgcGN0SGlnaCA9IChtZUhpZ2ggLyBiYXNlbGluZSAqIDEwMCkudG9GaXhlZCgxKTtcclxuXHJcbiAgcmV0dXJuIGh0bC5odG1sYFxyXG4gIDxkaXYgc3R5bGU9XCJkaXNwbGF5OiBmbGV4OyBnYXA6IDJyZW07IGZsZXgtd3JhcDogd3JhcDsgbWFyZ2luOiAycmVtIDA7XCI+XHJcbiAgICA8ZGl2IHN0eWxlPVwiZmxleDogMTsgbWluLXdpZHRoOiAyODBweDsgYmFja2dyb3VuZDogI2ZmZWJlZTsgYm9yZGVyLXJhZGl1czogOHB4OyBwYWRkaW5nOiAxLjVyZW07XCI+XHJcbiAgICAgIDxkaXYgc3R5bGU9XCJmb250LXdlaWdodDogNzAwOyBjb2xvcjogI2M2MjgyODsgZm9udC1zaXplOiAxLjFyZW07IG1hcmdpbi1ib3R0b206IDAuNXJlbTtcIj5cclxuICAgICAgICBXb3JsZCAxOiBMb3cgR2xvYmFsaXphdGlvblxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPGRpdiBzdHlsZT1cImNvbG9yOiAjNTU1OyBmb250LXNpemU6IDAuOTVyZW07XCI+XHJcbiAgICAgICAgVHJhZGUgb3Blbm5lc3MgPSAwLjQwIChlYXJseSAxOTkwcylcclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgc3R5bGU9XCJmb250LWZhbWlseTogJ0pldEJyYWlucyBNb25vJywgbW9ub3NwYWNlOyBmb250LXNpemU6IDEuM3JlbTsgY29sb3I6ICNjNjI4Mjg7IG1hcmdpbjogMXJlbSAwO1wiPlxyXG4gICAgICAgIE1FID0gJHttZUxvdyA+IDAgPyAnKycgOiAnJ30ke21lTG93LnRvRml4ZWQoNCl9XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IHN0eWxlPVwiZm9udC1zaXplOiAwLjk1cmVtO1wiPlxyXG4gICAgICAgIEJlaW5nIDEsMTAwIGttIGNsb3NlciB0byBhIHN0cmFpdCBpcyBhc3NvY2lhdGVkIHdpdGggPHN0cm9uZyBzdHlsZT1cImNvbG9yOiAjYzYyODI4O1wiPiR7cGN0TG93fSUgaGlnaGVyPC9zdHJvbmc+IGNvbmZsaWN0IHJpc2sgKHJlbGF0aXZlIHRvIGJhc2VsaW5lKVxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gICAgPGRpdiBzdHlsZT1cImZsZXg6IDE7IG1pbi13aWR0aDogMjgwcHg7IGJhY2tncm91bmQ6ICNlOGY1ZTk7IGJvcmRlci1yYWRpdXM6IDhweDsgcGFkZGluZzogMS41cmVtO1wiPlxyXG4gICAgICA8ZGl2IHN0eWxlPVwiZm9udC13ZWlnaHQ6IDcwMDsgY29sb3I6ICMyZTdkMzI7IGZvbnQtc2l6ZTogMS4xcmVtOyBtYXJnaW4tYm90dG9tOiAwLjVyZW07XCI+XHJcbiAgICAgICAgV29ybGQgMjogSGlnaCBHbG9iYWxpemF0aW9uXHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IHN0eWxlPVwiY29sb3I6ICM1NTU7IGZvbnQtc2l6ZTogMC45NXJlbTtcIj5cclxuICAgICAgICBUcmFkZSBvcGVubmVzcyA9IDAuNjAgKG1pZC0yMDAwcyBwZWFrKVxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPGRpdiBzdHlsZT1cImZvbnQtZmFtaWx5OiAnSmV0QnJhaW5zIE1vbm8nLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMS4zcmVtOyBjb2xvcjogIzJlN2QzMjsgbWFyZ2luOiAxcmVtIDA7XCI+XHJcbiAgICAgICAgTUUgPSAke21lSGlnaC50b0ZpeGVkKDQpfVxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPGRpdiBzdHlsZT1cImZvbnQtc2l6ZTogMC45NXJlbTtcIj5cclxuICAgICAgICBCZWluZyAxLDEwMCBrbSBjbG9zZXIgdG8gYSBzdHJhaXQgaXMgYXNzb2NpYXRlZCB3aXRoIDxzdHJvbmcgc3R5bGU9XCJjb2xvcjogIzJlN2QzMjtcIj4ke01hdGguYWJzKHBjdEhpZ2gpfSUgbG93ZXI8L3N0cm9uZz4gY29uZmxpY3QgcmlzayAocmVsYXRpdmUgdG8gYmFzZWxpbmUpXHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC9kaXY+XHJcbiAgPC9kaXY+YDtcclxufVxyXG4ifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
