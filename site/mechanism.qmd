@@ -5,7 +5,7 @@ description: "A game-theoretic model of strategic territory, conflict, and trade
 
 ## Why Does Globalization Change the Calculus?
 
-The paper builds a formal game-theoretic model. The intuition is straightforward:
+The paper uses game theory to formalize why trade changes conflict incentives. Here's the core intuition:
 
 ```{ojs}
 //| echo: false

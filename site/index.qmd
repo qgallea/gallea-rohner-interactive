@@ -27,7 +27,7 @@ An interactive exploration of the research by <strong>Quentin Gallea</strong> & 
 
 <div>
 <div class="key-number">64,818</div>
-<div class="key-number-label">Grid Cells Worldwide</div>
+<div class="key-number-label">Grid Cells (55 × 55 km each)</div>
 </div>
 
 </div>
@@ -40,18 +40,18 @@ An interactive exploration of the research by <strong>Quentin Gallea</strong> & 
 
 Since ancient times, controlling strategic trade routes has been both lucrative and violently contested — from the Strait of Salamis in 480 BC to the Strait of Kerch in 2018.
 
-**Does globalization make this better or worse?**
+**Does globalization make conflict near these strategic locations better or worse?**
 
 Two competing views have clashed for centuries:
 
 :::{.callout-note icon=false}
 ## 🔴 Lenin's View (1917)
-Trade and economic integration *fuel* conflict by making strategic locations more valuable and worth fighting over.
+Globalization makes strategic locations more valuable — and more worth fighting over. Trade and economic integration *fuel* conflict.
 :::
 
 :::{.callout-note icon=false}
 ## 🟢 Montesquieu's View (1758)
-Trade *curbs* conflict by fostering interdependence — when everyone benefits from open trade routes, there's more incentive to keep the peace.
+Trade creates mutual dependence — countries prefer cooperation to keep routes open. Economic integration *curbs* conflict.
 :::
 
 This research puts both views to the test. The answer? **It depends on how much trade is flowing.**

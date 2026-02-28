@@ -11,6 +11,8 @@ $$
 \text{Marginal Effect of Proximity} = \underbrace{0.0148}_{\beta_1 > 0} + \underbrace{(-0.0277)}_{\beta_2 < 0} \times \text{Trade Openness}
 $$
 
+In words: being near a choke point pushes conflict risk *up* (the positive term), but higher trade openness pushes it back *down* (the negative term). The question is which force wins.
+
 When trade openness is **low**, the marginal effect is **positive** — being near a choke point means more conflict. When trade openness is **high** enough, the effect **flips negative** — globalization protects strategic locations.
 
 **Move the slider to find the tipping point.**
@@ -26,7 +28,7 @@ When trade openness is **low**, the marginal effect is **positive** — being ne
 viewof tradeOpenness = Inputs.range([0.35, 0.60], {
   value: 0.47,
   step: 0.001,
-  label: "World Trade Openness (share of GDP)"
+  label: "World Trade Openness (exports + imports as % of world GDP, World Bank)"
 })
 
 // === COEFFICIENTS (from Table 2, Column 1) ===
@@ -53,7 +55,7 @@ htl.html`<div class="data-callout" style="font-size: 1.05rem; max-width: 700px; 
     : htl.html`<span style="color: #43a047;"><strong>decreases</strong></span> conflict risk by <strong>${Math.abs(pctBaseline).toFixed(1)}%</strong> relative to baseline.`
   }
   ${Math.abs(tradeOpenness - crossover) < 0.005
-    ? htl.html`<br><br><span style="color: #7e57c2; font-weight: 600;">⚡ You've found the tipping point! At trade ≈ ${crossover.toFixed(3)}, the effect is zero.</span>`
+    ? htl.html`<br><br><span style="color: #7e57c2; font-weight: 600;">⚡ You've found the tipping point! At trade ≈ ${crossover.toFixed(3)}, proximity to a choke point has no additional effect on conflict — risk is the same near and far.</span>`
     : ''
   }
 </div>`

@@ -11,6 +11,15 @@ The analysis uses a panel of 64,818 grid cells (55 x 55 km each) covering the en
 
 Areas closer to maritime choke points face significantly higher conflict risk — across all types of violence.
 
+:::{.callout-tip collapse="true"}
+## What do the column headers mean?
+- **Any Event**: Any type of armed conflict
+- **State-based**: Fighting involving a government (e.g., civil wars, interstate wars)
+- **Non-state**: Fighting between non-government armed groups (e.g., militias, rebel factions)
+- **One-sided**: Violence by an organized group against civilians
+- **ln(deaths+1)**: Logged death count — captures conflict *intensity*, not just occurrence
+:::
+
 <table class="regression-table">
   <thead>
     <tr>
@@ -52,7 +61,7 @@ Areas closer to maritime choke points face significantly higher conflict risk �
 
 :::{.callout-note}
 ## Reading the table
-Each column uses a different measure of conflict. The highlighted row shows that proximity to a choke point (measured in log-km) is a significant predictor of violence in all specifications. Standard errors (in parentheses) are clustered at the grid cell level. \*\*\* indicates significance at the 1% level.
+Each column uses a different measure of conflict. The coefficient in the highlighted row tells you: for each unit increase in proximity (one SD = 1,100 km closer), how much does conflict risk change? Standard errors (in parentheses) measure precision — smaller is better. \*\*\* means the result is statistically significant at the 1% level. "FE" stands for fixed effects — statistical controls that account for differences across latitudes, countries, or years.
 :::
 
 ### Table 2: The Interaction — Proximity x Trade Openness
@@ -109,6 +118,8 @@ The key result: proximity increases conflict when trade is low, but the interact
     </tr>
   </tbody>
 </table>
+
+**In plain English:** Column 1 shows that being near a choke point increases conflict risk (positive coefficient), but this effect shrinks — and eventually reverses — as global trade grows (negative interaction). This pattern holds across all conflict types, with all interaction terms significant at the 1% level.
 
 ### The "Two Worlds" Comparison
 

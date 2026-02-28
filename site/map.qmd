@@ -7,7 +7,7 @@ description: "Where are the world's strategic choke points, and where does confl
 
 Maritime choke points — straits, capes, and canals where shipping lanes narrow — are among the most strategically important locations on Earth. The Strait of Hormuz alone sees roughly 20% of the world's oil supply pass through its waters daily.
 
-The map below shows these choke points alongside geolocalized conflict events from the UCDP dataset. Toggle between periods of high and low world trade to see how conflict patterns shift.
+The map below shows these choke points alongside geolocalized conflict events from the UCDP (Uppsala Conflict Data Program) dataset. Toggle between periods of high and low world trade to see how conflict patterns shift.
 
 :::{.column-page}
 

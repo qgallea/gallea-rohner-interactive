@@ -11,7 +11,7 @@ When trade is booming, major powers protect choke points because it serves their
 
 :::{.callout-warning}
 ## The Free-Rider Problem
-As Mancur Olson (1965) showed, public goods are underprovided when everyone benefits but no one wants to pay the cost. Global maritime security is a textbook case: every nation benefits from open shipping lanes, but intervention is costly and risky.
+As economist Mancur Olson showed in his classic 1965 work, public goods — benefits everyone shares but nobody individually pays for — tend to be underprovided. Global maritime security is a textbook case: every nation benefits from open shipping lanes, but intervention is costly and risky.
 :::
 
 ## What This Means for Policy
